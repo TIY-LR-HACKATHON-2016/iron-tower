@@ -10,6 +10,7 @@ namespace IronTower.Web.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Money { get; set; }
+        public int MoneyPerMin { get; set; }
         public int NextFloorCost { get; set; }
         public string Message { get; set; }
         public int MessageType { get; set; }
