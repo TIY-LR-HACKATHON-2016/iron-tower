@@ -11,29 +11,27 @@ class GameController {
       money: 600,
       moneypermin: 60,
       unemployed: 3,
-      message: "You have two new people",
-      messagetype: "something",
+      message: "You have 2 new people",
+      messsagetype: "",
+      tower: [],
       NextFloorCost: 1000,
-      People: [],
-      Tower: []
-    }
-
-    this.floor = {
-      PeopleLimit: 4,
-      numPeople: 5,
-      floorType: "",
       people: []
+      }
 
-    }
+      this.floor = {
+        peoplelimit: 4,
+        numpeople: 5,
+        floortype: "",
+        people: []
+      }
 
-    this.person = {
-      home: "test",
-      work: "test",
-      name: "test"
-    }
+      this.person = {
+        home: "string",
+        work: "string",
+        name: "string"
+      }
 
-    // this._$http
-    // .get(``)
+
 
   }
 }
