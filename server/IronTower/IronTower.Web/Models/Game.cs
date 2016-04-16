@@ -8,9 +8,9 @@ namespace IronTower.Web.Models
     public class Game
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int Money { get; set; } = 600; //starting money should match starting nextfloorcost
-        public int MoneyPerMin { get; set; }
+        public string Name { get; set; } = "Player"; //change in game creation
+        public int Money { get; set; } = 1000; //starting money watch first 
+        public int MoneyPerMin { get; set; } = 10; // starting
         public int NextFloorCost { get; set; } = 600; //starting
         public string Message { get; set; }
         public int MessageType { get; set; } //0 nothing, 1 good, 2 bad
@@ -25,5 +25,10 @@ namespace IronTower.Web.Models
 
         public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
         public virtual IEnumerable<Floor> Tower { get; set; } = new List<Floor>();
+
+        public Game(string name)
+        {
+            Name = name;
+        }
     }
 }

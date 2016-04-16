@@ -14,6 +14,21 @@ namespace IronTower.Web.Controllers
     {
         private IronTowerDBContext db = new IronTowerDBContext();
 
+        //Get: New Game
+        public void New(string name)
+        {
+            if (name == null)
+            {
+                db.Games.Add(new Game("Player"));
+            }
+            else
+            {
+                db.Games.Add(new Game(name));
+            }
+
+            db.SaveChanges();
+        }
+
         // GET: Games
         public ActionResult Index()
         {
@@ -62,7 +77,7 @@ namespace IronTower.Web.Controllers
         public ActionResult AddFloor()
         {
             var game = db.Games.First();
-            game.Tower.ToList().Add(new Floor(FloorType.Empty));
+            game.Tower.ToList().Add(new Floor(0));
 
             game.NextFloorCost *= game.NextFloorCostIncrease;
 
@@ -85,7 +100,7 @@ namespace IronTower.Web.Controllers
                         {
                             p.Work = game.Tower.ToList()[id];
                             game.Tower.ToList()[id].NumPeople++;
-                            
+
                             //add to tower floor list?
 
                             //change floors earnings
