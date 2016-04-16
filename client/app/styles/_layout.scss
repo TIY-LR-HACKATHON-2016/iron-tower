@@ -162,11 +162,13 @@ html, body, .container{
   height: 180px;
   background-color: #457746;
   background-repeat: no-repeat;
+  background-image: url('http://static.wixstatic.com/media/80b5a8_b4cdca6c0edf4f84b29cbccd436845a8.jpg/v1/fill/w_900,h_180,al_c,q_80/80b5a8_b4cdca6c0edf4f84b29cbccd436845a8.jpg');
 
   .apartmenthead {
     width: 900px;
     height: 20px;
     background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
   }
 
   .floortitle {
@@ -193,7 +195,13 @@ html, body, .container{
     margin: 40px 0 0 40px;
     background-color: green;
     float: left;
-    border: 5px solid black;
+    border: 5px solid #795d38;
+    background-image: url('https://www.stonewoodproducts.com/wp-content/uploads/ewpt_cache/90x110_85_1_c_FFFFFF_33effae2ea9be39e719f53ca9a8c427d.jpg');
+  }
+
+  .fa.fa-circle {
+    float: right;
+    margin: 55px 8px 0 0;
   }
 
 
