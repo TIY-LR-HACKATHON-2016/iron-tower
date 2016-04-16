@@ -152,8 +152,32 @@ namespace IronTower.Web.Controllers
         //GET: Games/ChangeFloor/{id}
         public ActionResult ChangeFloor(int id)
         {
-            //change a floor logic
+            var game = db.Games.First();
+            var floor = new Floor(id);
+
+            if(game.Money >= floor.BuildCost)
+            {
+                game.Tower.ToList().Add(floor);
+                game.Money -= floor.BuildCost;
+                game.PeopleLimit = PossibleTenatTotal(game);
+            }
+
+            db.SaveChanges();
             return Json(db.Games.ToList());
+        }
+
+        public int PossibleTenatTotal(Game game)
+        {
+            var total = 0;
+            foreach(var f in game.Tower)
+            {
+                if(f.isApartment)
+                {
+                    total += f.PeopleLimit;
+                }
+            }
+
+            return total;
         }
 
         // GET: Games/Delete/5
