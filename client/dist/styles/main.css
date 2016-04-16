@@ -153,6 +153,10 @@ html, body, .container {
   .business .fa.fa-briefcase {
     margin: 2px 0 0 5px;
     float: left; }
+  .business .imageb {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
 
 .wholebuttondiv {
   width: 900px;

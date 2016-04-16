@@ -213,6 +213,12 @@ html, body, .container{
     margin: 2px 0 0 5px;
     float: left;
   }
+
+  .imageb {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
+  }
 }
 
 
