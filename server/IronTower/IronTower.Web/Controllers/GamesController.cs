@@ -165,10 +165,10 @@ namespace IronTower.Web.Controllers
         }
 
         //GET: Games/ChangeFloor/{id}
-        public ActionResult ChangeFloor(int id)
+        public ActionResult ChangeFloor(int id, int type)
         {
             var game = db.Games.First();
-            var floor = new Floor(id);
+            var floor = new Floor(type);
 
             if(game.Money >= floor.BuildCost)
             {
