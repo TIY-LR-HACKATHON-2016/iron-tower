@@ -162,6 +162,8 @@ namespace IronTower.Web.Controllers
             {
                 game.Tower.ToList().Add(floor);
                 game.Money -= floor.BuildCost;
+                
+                //check new PeopleLimit
                 game.PeopleLimit = PossibleTenatTotal(game);
             }
             else
