@@ -1,17 +1,53 @@
 class GameController {
-  constructor($http, $stateParams) {
+  constructor($http, $stateParams, $interval) {
     this._$http = $http;
     this.$stateParams = $stateParams;
     this.getData();
+    this.possibleFloors();
+    // $interval(this.getData.bind(this), 10000);
+    // $interval(this.possibleFloors.bind(this), 5000);
+
+    this.playerName = ""; // ng-model="gameCtrl.playerName"
+    // this.deletePlayer();
+  }
+
+  buyFloor() {
+    this._$http.get("http://irontower2016.azurewebsites.net/Games/AddFloor").then((response) => {
+      // console.log(response)
+      this.game = response.data[0];
+    })
+  }
+
+  possibleFloors() {
+    this._$http.get("http://irontower2016.azurewebsites.net/Games/PossibleFloors").then((response) => {
+      // console.log(response)
+      this.possibleFloors = response.data;
+    })
+  }
+
+  playerName() {
+    this._$http.post("http://irontower2016.azurewebsites.net/Games/PlayerName", {
+      Name: this.playerName
+    }).then((response) => {
+      this.game.Name = this.playerName;
+    });
+  }
+
+  deletePlayer() {
+    this._$http.get("http://irontower2016.azurewebsites.net/Games/Delete")
+      .then((response) => {
+        console.log(response);
+      })
   }
 
 
-  //
-  // changeFloor(floor) {
-  //   this._$http.post("http://irontower2016.azurewebsites.net/Games/", {
-  //
-  //   })
-  // }
+  changeFloor(floor) {
+    // console.log(floor);
+    this._$http.get(`http://irontower2016.azurewebsites.net/Games/ChangeFloor?Id=${floor.Id}&Type=${floor.pickedType}`)
+      .then((response) => {
+        console.log(response);
+      })
+  }
 
   getData() {
   //   this.game = {

@@ -38,12 +38,31 @@
       <div class="floors">
         <div class="bottom-wrapper">
 
-            <div class="wholebuttondiv">
+          <div ng-repeat="floor in gameCtrl.game.Tower">
+
+            <div class="wholebuttondiv" ng-if="floor.FloorType === null">
+
+              <div class="buttonleft">
+                <select ng-model="floor.pickedType">
+                  <option ng-repeat="possibleFloor in gameCtrl.possibleFloors" value="{{ possibleFloor.Id }}" ng-if="possibleFloor.Name != 'Empty Floor'">
+                    {{possibleFloor.Name}} - ${{possibleFloor.BuildCost}}
+                  </option>
+                 </select>
+              </div>
+
+              <div class="buttonright">
+                <input class="rightb" type="submit" value="Buy" ng-click="gameCtrl.changeFloor(floor)">
+
+              </div>
+            </div>
+
+            <!-- <div class="wholebuttondiv">
 
               <div class="buttonleft">
               <select>
-                <option ng-repeat="floor in gameCtrl.possibleFloors" value="{{floor.FloorType}}">
-                    apartment - ${{floor.BuildCost}}
+                <option ng-repeat="floor in gameCtrl.possibleFloors" value="{{floor.FloorType}}" ng-if="floor.Name != 'Empty Floor'">
+                    {{floor.Name}} - ${{floor.BuildCost}}
+
                 </option>
 
                </select>
@@ -66,6 +85,13 @@
 
             <img class="apimage" src="http://oi68.tinypic.com/121tmkx.jpg"/>
 
+            <div class="door">
+              <i class="fa fa-circle" aria-hidden="true"></i>
+
+            </div>
+
+
+            <i class="fa fa-bed" aria-hidden="true"></i>
           </div>
 
           <div class="business">
@@ -78,7 +104,7 @@
 
             </div>
 
-          </div>
+          </div> -->
 
         </div>
         <div class="floor" ng-repeat="floor in gameCtrl.floors"></div>
