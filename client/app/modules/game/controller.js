@@ -7,28 +7,28 @@ class GameController {
 
   getData() {
     this.game = {
-      name: "Nick",
-      money: 600,
-      moneypermin: 60,
-      unemployed: 3,
-      message: "You have 2 new people",
-      messsagetype: "",
-      tower: [],
+      Name: "Nick",
+      Money: 600,
+      MoneyPerMin: 60,
+      Unemployed: 3,
+      Message: "You have 2 new people",
+      MesssageType: "",
+      Tower: [],
       NextFloorCost: 1000,
-      people: []
+      People: []
       }
 
       this.floor = {
-        peoplelimit: 4,
-        numpeople: 5,
-        floortype: "",
-        people: []
+        PeopleLimit: 4,
+        NumPeople: 5,
+        FloorType: "",
+        People: []
       }
 
       this.person = {
-        home: "string",
-        work: "string",
-        name: "string"
+        Home: "string",
+        Work: "string",
+        Name: "string"
       }
 
 
