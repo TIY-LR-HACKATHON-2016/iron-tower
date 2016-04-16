@@ -95,7 +95,8 @@ namespace IronTower.Web.Controllers
         public ActionResult AddFloor()
         {
             var game = db.Games.First();
-            if(game.Money < game.NextFloorCost)
+
+            if (game.Money < game.NextFloorCost)
             {
                 game.Message = "Not enough money";
                 game.MessageType = 2;
@@ -145,6 +146,7 @@ namespace IronTower.Web.Controllers
                     }
                 }
             }
+
             game.Message = "No unemployed tenants!";
             game.MessageType = 2;
             return Json(db.Games.ToList());
@@ -161,6 +163,11 @@ namespace IronTower.Web.Controllers
                 game.Tower.ToList().Add(floor);
                 game.Money -= floor.BuildCost;
                 game.PeopleLimit = PossibleTenatTotal(game);
+            }
+            else
+            {
+                game.Message = "Not enough money!";
+                game.MessageType = 2;
             }
 
             db.SaveChanges();
