@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.EnterpriseServices.Internal;
 
@@ -36,6 +37,9 @@ namespace IronTower.Web.Models
         public int NumPeople => this.People.Count;
 
         public FloorType FloorType { get; set; }
+
+        [Required]
+        public Game Game { get; set; }
 
         public virtual ICollection<Person> People { get; set; } = new List<Person>();
        

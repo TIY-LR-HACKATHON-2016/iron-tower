@@ -7,13 +7,13 @@ namespace IronTower.Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fixseed : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fixseed));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604162207510_fixseed"; }
+            get { return "201604162307102_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

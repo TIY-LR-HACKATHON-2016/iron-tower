@@ -10,6 +10,14 @@ namespace IronTower.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        protected void Application_BeginRequest()
+        {
+            if (Request.HttpMethod == "OPTIONS")
+            {
+                Request.Headers.Add("Content-Type", "application/json");
+            }
+        }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

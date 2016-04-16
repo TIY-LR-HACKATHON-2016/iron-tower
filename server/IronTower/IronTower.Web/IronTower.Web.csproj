@@ -137,21 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604161942502_InitialCreate.cs" />
-    <Compile Include="Migrations\201604161942502_InitialCreate.Designer.cs">
-      <DependentUpon>201604161942502_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604161946513_RemovedTotalFloorTypes.cs" />
-    <Compile Include="Migrations\201604161946513_RemovedTotalFloorTypes.Designer.cs">
-      <DependentUpon>201604161946513_RemovedTotalFloorTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604162043390_NewFloors36.cs" />
-    <Compile Include="Migrations\201604162043390_NewFloors36.Designer.cs">
-      <DependentUpon>201604162043390_NewFloors36.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604162207510_fixseed.cs" />
-    <Compile Include="Migrations\201604162207510_fixseed.Designer.cs">
-      <DependentUpon>201604162207510_fixseed.cs</DependentUpon>
+    <Compile Include="Migrations\201604162307102_InitialCreate.cs" />
+    <Compile Include="Migrations\201604162307102_InitialCreate.Designer.cs">
+      <DependentUpon>201604162307102_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
@@ -210,17 +198,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604161942502_InitialCreate.resx">
-      <DependentUpon>201604161942502_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604161946513_RemovedTotalFloorTypes.resx">
-      <DependentUpon>201604161946513_RemovedTotalFloorTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604162043390_NewFloors36.resx">
-      <DependentUpon>201604162043390_NewFloors36.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604162207510_fixseed.resx">
-      <DependentUpon>201604162207510_fixseed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604162307102_InitialCreate.resx">
+      <DependentUpon>201604162307102_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IronTower.Web.Models
 {
@@ -12,6 +13,7 @@ namespace IronTower.Web.Models
         public int? WorkId { get; set; }
         public virtual Floor Work { get; set; }
         public string Name { get; set; }
+        [Required]
         public Game Game { get; set; }
 
         public Person()
