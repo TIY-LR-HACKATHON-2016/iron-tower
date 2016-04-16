@@ -14,7 +14,7 @@ namespace IronTower.Web.Controllers
     {
         private IronTowerDBContext db = new IronTowerDBContext();
 
-        //Get: New Game
+        //Get: New
         public void New(string name)
         {
             if (name == null)
@@ -25,6 +25,7 @@ namespace IronTower.Web.Controllers
             {
                 db.Games.Add(new Game(name));
             }
+
             db.SaveChanges();
         }
 
@@ -45,7 +46,7 @@ namespace IronTower.Web.Controllers
             }
 
             //add tennant?
-            var floorid = canAddTennant(game);
+            var floorid = CanAddTennant(game);
             if (floorid >= 0 && (DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
             {
                 game.Tower.ToList()[floorid].People.ToList().Add(new Person());
@@ -60,7 +61,7 @@ namespace IronTower.Web.Controllers
             return Json(db.Games.ToList());
         }
 
-        private int canAddTennant(Game game)
+        private int CanAddTennant(Game game)
         {
             foreach (var f in game.Tower)
             {
