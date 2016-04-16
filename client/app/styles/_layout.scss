@@ -6,7 +6,7 @@ body {
   height: 800px;
   width: 1000px;
   margin: 0 auto;
-  background-color: black;
+  background-color: gray;
 }
 
 .floor {
@@ -19,6 +19,40 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
-  background-color: red;
+  height: 80px;
+  background-color: lightgray;
+}
+
+.footercoin {
+  border-radius: 50%;
+  margin: 14px 0 0 20px;
+  float: left;
+}
+
+.gamemoney {
+  float: left;
+  margin: 30px 0 0 20px;
+}
+
+.fa.fa-male {
+  float: left;
+  margin: 23px 0 0 20px;
+  font-size: 2rem;
+}
+
+.unemployed {
+  float: left;
+  margin: 31px 0 0 20px;
+}
+
+.city {
+  width: 100%;
+  height: 400px;
+  background-image: url('http://www.allvectors.com/wp-content/uploads/2012/06/night-city-vector.jpg');
+}
+
+.clouds {
+  width: 100%;
+  height: 400px;
+  background-image: url('http://www.allvectors.com/wp-content/uploads/2012/06/night-city-vector.jpg');
 }

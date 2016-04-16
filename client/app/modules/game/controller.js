@@ -9,6 +9,7 @@ class GameController {
     this.game = {
       name: "Nick",
       money: 600,
+      moneypermin: 60,
       unemployed: 3,
       message: "You have two new people",
       messagetype: "something",
