@@ -39,7 +39,7 @@ namespace IronTower.Web.Controllers
             game.MessageType = 0;
 
             //add money?
-            if ((DateTime.Now - game.LastPaid).Minutes >= 1)
+            if ((DateTime.Now - game.LastPaid).Seconds >= 30)
             {
                 game.Money += game.MoneyPerMin;
                 game.LastPaid = DateTime.Now;
