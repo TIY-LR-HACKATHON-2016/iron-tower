@@ -1,8 +1,22 @@
 class GameController {
-  constructor($http, $stateParams) {
+  constructor($http, $stateParams, $interval) {
     this._$http = $http;
     this.$stateParams = $stateParams;
     this.getData();
+    $interval(this.getData.bind(this), 1000);
+  }
+
+  buyFloor() {
+    this._$http.get("http://irontower2016.azurewebsites.net/Games/AddFloor").then((response) => {
+      console.log(response)
+      this.game = response.data[0];
+    })
+
+
+  }
+
+  changeFloor(floor) {
+    
   }
 
   getData() {
@@ -34,10 +48,10 @@ class GameController {
  this._$http
  .get("http://irontower2016.azurewebsites.net/")
  .then((response) => {
-   console.log(response);
+  //  console.log(response);
    let results = response.data[0];
    this.game = results;
-   
+
  })
 
 
