@@ -30,8 +30,12 @@ namespace IronTower.Web.Migrations
 
             context.FloorTypes.AddOrUpdate(x => x.Name,
                 new FloorType() { BuildCost = 0, Category = FloorCategory.Empty, Name = "Empty Floor", },
-                new FloorType() { BuildCost = 200, Category = FloorCategory.Business, Name = "McDonalds", PeopleLimit = 2, Earning = 25, EarningIncrease = 2 },
-                new FloorType() { BuildCost = 200, Category = FloorCategory.Apartment, Name = "Bungelo", PeopleLimit = 2 }
+                new FloorType() { BuildCost = 200, Category = FloorCategory.Business, Name = "Cafe", PeopleLimit = 2, Earning = 25, EarningIncrease = 2 },
+                new FloorType() { BuildCost = 200, Category = FloorCategory.Apartment, Name = "Small Apartments", PeopleLimit = 2 },
+                new FloorType() { BuildCost = 1500, Category = FloorCategory.Business, Name = "Pizzaria", PeopleLimit = 4, Earning = 50, EarningIncrease = 2 },
+                new FloorType() { BuildCost = 2500, Category = FloorCategory.Apartment, Name = "Medium Apartments", PeopleLimit = 4 },
+                new FloorType() { BuildCost = 5000, Category = FloorCategory.Business, Name = "Burger Joint", PeopleLimit = 5, Earning = 75, EarningIncrease = 2},
+                new FloorType() { BuildCost = 7500, Category = FloorCategory.Apartment, Name = "Large Apartments", PeopleLimit = 5 }
                 );
         }
     }

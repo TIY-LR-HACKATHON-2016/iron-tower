@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201604161946513_RemovedTotalFloorTypes.Designer.cs">
       <DependentUpon>201604161946513_RemovedTotalFloorTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604162043390_NewFloors36.cs" />
+    <Compile Include="Migrations\201604162043390_NewFloors36.Designer.cs">
+      <DependentUpon>201604162043390_NewFloors36.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -207,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604161946513_RemovedTotalFloorTypes.resx">
       <DependentUpon>201604161946513_RemovedTotalFloorTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604162043390_NewFloors36.resx">
+      <DependentUpon>201604162043390_NewFloors36.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
