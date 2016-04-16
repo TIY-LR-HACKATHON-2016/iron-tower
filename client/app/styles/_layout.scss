@@ -58,7 +58,7 @@ html, body, .container{
 }
 
 .floors .bottom-wrapper {
-  padding-bottom: 56px;
+  padding-bottom: 107px;
   overflow: auto;
   position: absolute;
   max-height: 100%;
@@ -143,8 +143,8 @@ html, body, .container{
   }
 
   h2 {
-    color: #795D38;
-    text-shadow: 3px 3px 3px black;
+    color: #black;
+    // text-shadow: 3px 3px 3px black;
     font-family: 'Rock Salt', cursive;
     font-size: 40px;
 
@@ -178,20 +178,44 @@ html, body, .container{
 .wholebuttondiv {
   width: 900px;
   height: 180px;
-  background-color: red;
+  background-color: lightgray;
 
+
+  .leftb {
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    float: left;
+    border-radius: 20px;
+    margin: 68px 0 0 175px;
+    background-image: url('http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png');
+    color: red;
+    font-size: 20px;
+    font-family: cursive;
+  }
+
+  .rightb {
+    width: 100px;
+    height: 50px;
+    float: left;
+    border-radius: 20px;
+    margin: 68px 0 0 175px;
+    background-image: url('http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png');
+    color: red;
+    font-size: 20px;
+    font-family: cursive;
+  }
 
   .buttonleft {
     width: 450px;
     height: 180px;
-    background-color: green;
     float: left;
+
   }
 
   .buttonright {
     width: 450px;
     height: 180px;
-    background-color: blue;
     float: left;
   }
 }
