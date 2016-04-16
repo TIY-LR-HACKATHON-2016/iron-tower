@@ -8,11 +8,30 @@ class GameController {
   getData() {
     this.game = {
       name: "Nick",
-      money: 600
-    }
+      money: 600,
+      moneypermin: 60,
+      unemployed: 3,
+      message: "You have 2 new people",
+      messsagetype: "",
+      tower: [],
+      NextFloorCost: 1000,
+      people: []
+      }
 
-    // this._$http
-    // .get(``)
+      this.floor = {
+        peoplelimit: 4,
+        numpeople: 5,
+        floortype: "",
+        people: []
+      }
+
+      this.person = {
+        home: "string",
+        work: "string",
+        name: "string"
+      }
+
+
 
   }
 }
