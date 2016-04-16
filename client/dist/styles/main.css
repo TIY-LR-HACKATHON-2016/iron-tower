@@ -1,0 +1,21 @@
+body {
+  height: 100%;
+  margin: 0; }
+
+.tower {
+  height: 800px;
+  width: 1000px;
+  margin: 0 auto;
+  background-color: black; }
+
+.floor {
+  width: 800px;
+  height: 80px;
+  background-color: blue; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: red; }
