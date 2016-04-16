@@ -54,7 +54,16 @@ html, body, .container{
 
 .floors {
   height: 800px;
-  overflow: scroll;
+  position: relative;
+}
+
+.floors .bottom-wrapper {
+  padding-bottom: 56px;
+  overflow: auto;
+  position: absolute;
+  max-height: 100%;
+  bottom: 0;
+  left: 0;
 }
 
 .city {
@@ -146,4 +155,43 @@ html, body, .container{
     font-family: 'Orbitron', sans-serif;
   }
 
+}
+
+.apartment {
+  width: 900px;
+  height: 180px;
+  background-color: blue;
+}
+
+.business {
+  width: 900px;
+  height: 180px;
+  background-color: goldenrod;
+}
+
+.button {
+  width: 900px;
+  height: 180px;
+  background-color: orange;
+}
+
+.wholebuttondiv {
+  width: 900px;
+  height: 180px;
+  background-color: red;
+
+
+  .buttonleft {
+    width: 450px;
+    height: 180px;
+    background-color: green;
+    float: left;
+  }
+
+  .buttonright {
+    width: 450px;
+    height: 180px;
+    background-color: blue;
+    float: left;
+  }
 }
