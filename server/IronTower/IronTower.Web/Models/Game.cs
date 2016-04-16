@@ -16,9 +16,9 @@ namespace IronTower.Web.Models
         public int MessageType { get; set; }
         public int PeopleLimit { get; set; }
         public int Unemployed { get; set; }
-        public DateTime LastTenant { get; set; }
+        public DateTime LastTenant { get; set; } = new DateTime();
 
-        public virtual IEnumerable<Person> People {get;set;}
-        public virtual IEnumerable<Floor> Tower { get; set; }
+        public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
+        public virtual IEnumerable<Floor> Tower { get; set; } = new List<Floor>();
     }
 }

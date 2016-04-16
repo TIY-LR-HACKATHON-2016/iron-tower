@@ -22,6 +22,9 @@ namespace IronTower.Web.Controllers
         //GET: Games/AddFloor 
         public ActionResult AddFloor()
         {
+            var game = db.Games.ToList();
+            game.First().Tower.ToList().Add(new Floor(FloorType.Empty));
+            db.SaveChanges();
             return Json(db.Games.ToList());
         }
 
