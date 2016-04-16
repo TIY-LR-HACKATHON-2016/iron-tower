@@ -43,7 +43,15 @@ html, body, .container {
 
 .floors {
   height: 800px;
-  overflow: scroll; }
+  position: relative; }
+
+.floors .bottom-wrapper {
+  padding-bottom: 107px;
+  overflow: auto;
+  position: absolute;
+  max-height: 100%;
+  bottom: 0;
+  left: 0; }
 
 .city {
   width: 100%;
@@ -101,9 +109,57 @@ html, body, .container {
     text-shadow: 3px 3px 3px black;
     font-family: 'Orbitron', sans-serif; }
   .leftbox h2 {
-    color: #795D38;
-    text-shadow: 3px 3px 3px black;
+    color: #black;
     font-family: 'Rock Salt', cursive;
     font-size: 40px; }
   .leftbox h3 {
     font-family: 'Orbitron', sans-serif; }
+
+.apartment {
+  width: 900px;
+  height: 180px;
+  background-color: blue; }
+
+.business {
+  width: 900px;
+  height: 180px;
+  background-color: goldenrod; }
+
+.button {
+  width: 900px;
+  height: 180px;
+  background-color: orange; }
+
+.wholebuttondiv {
+  width: 900px;
+  height: 180px;
+  background-color: lightgray; }
+  .wholebuttondiv .leftb {
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    float: left;
+    border-radius: 20px;
+    margin: 68px 0 0 175px;
+    background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
+    color: red;
+    font-size: 20px;
+    font-family: cursive; }
+  .wholebuttondiv .rightb {
+    width: 100px;
+    height: 50px;
+    float: left;
+    border-radius: 20px;
+    margin: 68px 0 0 175px;
+    background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
+    color: red;
+    font-size: 20px;
+    font-family: cursive; }
+  .wholebuttondiv .buttonleft {
+    width: 450px;
+    height: 180px;
+    float: left; }
+  .wholebuttondiv .buttonright {
+    width: 450px;
+    height: 180px;
+    float: left; }
