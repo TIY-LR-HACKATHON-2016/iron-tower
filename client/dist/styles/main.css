@@ -11,9 +11,15 @@ html, body, .container {
   padding: 0;
   overflow: hidden; }
 
-.container {
-  background-color: #007ced;
-  background: linear-gradient(to bottom, #007ced 1%, #cce7ff 100%); }
+.city .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; }
+
+.city .gameBox {
+  position: relative;
+  z-index: 3; }
 
 #cloud-intro {
   position: relative;
@@ -35,11 +41,16 @@ html, body, .container {
   background-color: gray;
   box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
 
+.floors {
+  height: 800px;
+  overflow: scroll; }
+
 .city {
   width: 100%;
   height: 900px;
   background-image: url("https://i.ytimg.com/vi/W5kz6QNFKs0/maxresdefault.jpg");
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  position: relative; }
 
 .floor {
   width: 800px;
@@ -52,7 +63,8 @@ html, body, .container {
   width: 100%;
   height: 80px;
   background-color: lightgray;
-  box-shadow: 0px 0px 100px -20px rgba(0, 0, 0, 0.75); }
+  box-shadow: 0px 0px 100px -20px rgba(0, 0, 0, 0.75);
+  z-index: 4; }
   .footer .footercoin {
     border-radius: 50%;
     margin: 14px 0 0 20px;
