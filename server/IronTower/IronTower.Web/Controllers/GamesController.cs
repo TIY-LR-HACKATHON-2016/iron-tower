@@ -63,7 +63,7 @@ namespace IronTower.Web.Controllers
         {
             var game = db.Games.First();
             var model = db.FloorTypes.ToList().Where(x => x.BuildCost < game.Money)
-                .Select(x => new {x.Name, x.PeopleLimit, x.Category, x.BuildCost, x.Earning});
+                .Select(x => new {x.Id, x.Name, x.PeopleLimit, x.Category, x.BuildCost, x.Earning});
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
