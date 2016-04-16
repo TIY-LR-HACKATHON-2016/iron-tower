@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronTower.Web", "IronTower.Web\IronTower.Web.csproj", "{6B3D1D6E-2EB4-46B1-9754-6D1363F8479F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronTower.Web", "IronTower.Web\IronTower.Web.csproj", "{93BE077E-F8F9-4129-8DC0-817A35E00BFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B3D1D6E-2EB4-46B1-9754-6D1363F8479F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B3D1D6E-2EB4-46B1-9754-6D1363F8479F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B3D1D6E-2EB4-46B1-9754-6D1363F8479F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B3D1D6E-2EB4-46B1-9754-6D1363F8479F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BE077E-F8F9-4129-8DC0-817A35E00BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BE077E-F8F9-4129-8DC0-817A35E00BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BE077E-F8F9-4129-8DC0-817A35E00BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BE077E-F8F9-4129-8DC0-817A35E00BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

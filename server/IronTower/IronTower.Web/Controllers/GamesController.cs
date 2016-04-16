@@ -12,30 +12,81 @@ namespace IronTower.Web.Controllers
 {
     public class GamesController : Controller
     {
-        private IronTowerWebContext db = new IronTowerWebContext();
+        private IronTowerDBContext db = new IronTowerDBContext();
 
         // GET: Games
-        public ActionResult Game()
+        public ActionResult Index()
         {
-            return Json(db.Games.ToList());
+            return View(db.Games.ToList());
         }
 
-        //GET: Games/AddFloor 
-        public ActionResult AddFloor()
+        // GET: Games/Details/5
+        public ActionResult Details(int? id)
         {
-            return Json(db.Games.ToList());
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Game game = db.Games.Find(id);
+            if (game == null)
+            {
+                return HttpNotFound();
+            }
+            return View(game);
         }
 
-        //GET: Games/AddPerson/{id}
-        public ActionResult AddPerson(int id)
+        // GET: Games/Create
+        public ActionResult Create()
         {
-            return Json(db.Games.ToList());
+            return View();
         }
 
-        //GET: Games/RemoveFloor/{id}
-        public ActionResult RemoveFloor(int id)
+        // POST: Games/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name,Money,MoneyPerMin,NextFloorCost,Message,MessageType,PeopleLimit,Unemployed,LastTenant")] Game game)
         {
-            return Json(db.Games.ToList());
+            if (ModelState.IsValid)
+            {
+                db.Games.Add(game);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(game);
+        }
+
+        // GET: Games/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Game game = db.Games.Find(id);
+            if (game == null)
+            {
+                return HttpNotFound();
+            }
+            return View(game);
+        }
+
+        // POST: Games/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name,Money,MoneyPerMin,NextFloorCost,Message,MessageType,PeopleLimit,Unemployed,LastTenant")] Game game)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(game).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(game);
         }
 
         // GET: Games/Delete/5
@@ -61,7 +112,7 @@ namespace IronTower.Web.Controllers
             Game game = db.Games.Find(id);
             db.Games.Remove(game);
             db.SaveChanges();
-            return Json(game);
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

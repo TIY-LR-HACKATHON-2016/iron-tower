@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-public class IronTowerWebContext : DbContext
+public class IronTowerDBContext : DbContext
 {
     // You can add custom code to this file. Changes will not be overwritten.
     // 
@@ -13,7 +13,7 @@ public class IronTowerWebContext : DbContext
     // For more information refer to the documentation:
     // http://msdn.microsoft.com/en-us/data/jj591621.aspx
 
-    public IronTowerWebContext() : base("name=IronTowerWebContext")
+    public IronTowerDBContext() : base("name=IronTowerDBContext")
     {
     }
 
