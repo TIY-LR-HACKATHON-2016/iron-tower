@@ -24,8 +24,8 @@ namespace IronTower.Web.Models
         public int NextFloorCostIncrease { get; set; } = 2; //multiplier
         public int TotalFloorTypes { get; set; } = 2; //change as add floors (ignore 0)
 
-        public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
-        public virtual IEnumerable<Floor> Tower { get; set; } = new List<Floor>();
+        public virtual ICollection<Person> People { get; set; } = new List<Person>();
+        public virtual ICollection<Floor> Tower { get; set; } = new List<Floor>();
 
         public Game()
         {

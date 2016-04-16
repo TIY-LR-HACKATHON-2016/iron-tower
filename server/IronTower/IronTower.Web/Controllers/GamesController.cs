@@ -149,7 +149,7 @@ namespace IronTower.Web.Controllers
 
             game.Message = "No unemployed tenants!";
             game.MessageType = 2;
-            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(db.Games, JsonRequestBehavior.AllowGet);
         }
 
         //GET: Games/ChangeFloor/{id}

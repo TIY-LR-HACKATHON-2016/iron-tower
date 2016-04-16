@@ -18,7 +18,7 @@ namespace IronTower.Web.Models
         public int EarningIncrease { get; set; }//per new employee set by type
         public int BuildCost { get; set; } //set by type
 
-        public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
+        public virtual ICollection<Person> People { get; set; } = new List<Person>();
 
         //public Floor(Type number)
         //{
