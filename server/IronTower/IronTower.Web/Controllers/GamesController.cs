@@ -161,6 +161,7 @@ namespace IronTower.Web.Controllers
             if(game.Money >= floor.BuildCost)
             {
                 //change floor 
+                game.Tower.ToList().RemoveAt(id);
                 game.Tower.ToList().Add(floor);
                 game.Money -= floor.BuildCost;
                 
