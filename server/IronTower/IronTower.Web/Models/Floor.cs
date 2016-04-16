@@ -8,12 +8,15 @@ namespace IronTower.Web.Models
     {
      
         public int Id { get; set; }
-        public int Earning { get; set; } = 0;
-        public int Interval { get; set; } = 0;
-        public DateTime LastEarned { get; set; } = new DateTime();
-        public int PeopleLimit { get; set; } = 0;
-        public int NumPeople { get; set; } = 0;
+        public bool isApartment { get; set; } = false; // set by type
+        public int Earning { get; set; } // set by type
+        public int PeopleLimit { get; set; } //set by type
+        public int NumPeople { get; set; }
         public FloorType FloorType{ get; set; }
+
+        //game balance
+        public int EarningIncrease { get; set; } = 2; //per new employee
+        public int BuildCost { get; set; } //set by type
 
         public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
 

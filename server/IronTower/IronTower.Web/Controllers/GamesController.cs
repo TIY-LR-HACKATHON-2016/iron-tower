@@ -17,41 +17,100 @@ namespace IronTower.Web.Controllers
         // GET: Games
         public ActionResult Index()
         {
+            var game = db.Games.First();
+
+            //initialize new game state
+            game.Message = "";
+            game.MessageType = 0;
+
+            //add money?
+            if ((DateTime.Now - game.LastPaid).Minutes >= 1)
+            {
+                game.Money += game.MoneyPerMin;
+                game.LastPaid = DateTime.Now;
+            }
+
+            //add tennant?
+            var floorid = canAddTennant(game);
+            if (floorid > 0 && (DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
+            {
+                game.Tower.ToList()[floorid].People.ToList().Add(new Person());
+                game.Tower.ToList()[floorid].NumPeople++;
+
+                game.LastTenant = DateTime.Now;
+                game.Message = "New Tenant has arrived!";
+                game.MessageType = 1;
+            }
+
+            db.SaveChanges();
             return View(db.Games.ToList());
         }
+
+        private int canAddTennant(Game game)
+        {
+            foreach (var f in game.Tower)
+            {
+                if (f.isApartment && f.PeopleLimit > f.NumPeople)
+                {
+                    return f.Id;
+                }
+            }
+            return 0;
+        }
+
         //GET: Games/AddFloor 
         public ActionResult AddFloor()
         {
             var game = db.Games.First();
             game.Tower.ToList().Add(new Floor(FloorType.Empty));
+
+            game.NextFloorCost *= game.NextFloorCostIncrease;
+
             db.SaveChanges();
             return Json(db.Games.ToList());
         }
 
-        //GET: Games/AddPerson/{id}
-        public ActionResult AddPerson(int id)
+        //GET: Games/AddEmployee/{id}
+        public ActionResult AddEmployee(int id)
         {
-            var tower = db.Games.First().Tower.ToList();
-            foreach (var f in tower)
-            {
-                foreach(var p in f.People)
-                {
-                    if(p.Work == null)
-                    {
-                        p.Work = f;
+            var game = db.Games.First();
 
-                        db.SaveChanges();
-                        return Json(db.Games.ToList());
+            foreach (var f in game.Tower)
+            {
+                if (f.isApartment == true)
+                {
+                    foreach (var p in f.People)
+                    {
+                        if (p.Work == null)
+                        {
+                            p.Work = game.Tower.ToList()[id];
+                            game.Tower.ToList()[id].NumPeople++;
+                            //add to tower floor list?
+
+                            //change floors earnings
+                            if (f.NumPeople > 1)
+                            {
+                                db.Games.First().MoneyPerMin -= f.Earning;
+                                f.Earning *= f.EarningIncrease;
+                            }
+
+                            db.Games.First().MoneyPerMin += f.Earning;
+                            db.Games.First().Unemployed--;
+
+                            db.SaveChanges();
+                            return Json(db.Games.ToList());
+                        }
                     }
                 }
             }
-                db.SaveChanges();
+
             return Json(db.Games.ToList());
         }
 
-        //GET: Games/RemoveFloor/{id}
-        public ActionResult RemoveFloor(int id)
+        //GET: Games/ChangeFloor/{id}
+        public ActionResult ChangeFloor(int id)
         {
+            //change a floor logic
             return Json(db.Games.ToList());
         }
 
