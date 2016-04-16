@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201604161558223_FloorFields.Designer.cs">
       <DependentUpon>201604161558223_FloorFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604161648599_ChangedIEnumerable.cs" />
+    <Compile Include="Migrations\201604161648599_ChangedIEnumerable.Designer.cs">
+      <DependentUpon>201604161648599_ChangedIEnumerable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -207,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604161558223_FloorFields.resx">
       <DependentUpon>201604161558223_FloorFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604161648599_ChangedIEnumerable.resx">
+      <DependentUpon>201604161648599_ChangedIEnumerable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
