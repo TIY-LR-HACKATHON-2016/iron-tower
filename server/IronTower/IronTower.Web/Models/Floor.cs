@@ -8,11 +8,11 @@ namespace IronTower.Web.Models
     {
      
         public int Id { get; set; }
-        public int Earning { get; set; }
-        public int Interval { get; set; }
+        public int Earning { get; set; } = 0;
+        public int Interval { get; set; } = 0;
         public DateTime LastEarned { get; set; } = new DateTime();
-        public int PeopleLimit { get; set; }
-        public int NumPeople{ get; set; }
+        public int PeopleLimit { get; set; } = 0;
+        public int NumPeople { get; set; } = 0;
         public FloorType FloorType{ get; set; }
 
         public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
@@ -20,9 +20,6 @@ namespace IronTower.Web.Models
         public Floor(FloorType empty)
         {
             this.FloorType = empty;
-            this.Earning = 0;
-            this.Interval = 0;
-            this.
         }
 
     }
