@@ -22,6 +22,7 @@ namespace IronTower.Web.Models
         //game balance
         public int TennantInterval { get; set; } = 60; //seconds
         public int NextFloorCostIncrease { get; set; } = 2; //multiplier
+        public int TotalFloorTypes { get; set; } = 2; //change as add floors (ignore 0)
 
         public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
         public virtual IEnumerable<Floor> Tower { get; set; } = new List<Floor>();

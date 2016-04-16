@@ -25,16 +25,15 @@ namespace IronTower.Web.Controllers
             {
                 db.Games.Add(new Game(name));
             }
-
             db.SaveChanges();
         }
 
         // GET: Games
-        public ActionResult Index()
+        public ActionResult GameState()
         {
             var game = db.Games.First();
 
-            //initialize new game state
+            //initialize each game state
             game.Message = "";
             game.MessageType = 0;
 
@@ -47,7 +46,7 @@ namespace IronTower.Web.Controllers
 
             //add tennant?
             var floorid = canAddTennant(game);
-            if (floorid > 0 && (DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
+            if (floorid >= 0 && (DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
             {
                 game.Tower.ToList()[floorid].People.ToList().Add(new Person());
                 game.Tower.ToList()[floorid].NumPeople++;
@@ -58,7 +57,7 @@ namespace IronTower.Web.Controllers
             }
 
             db.SaveChanges();
-            return View(db.Games.ToList());
+            return Json(db.Games.ToList());
         }
 
         private int canAddTennant(Game game)
@@ -70,9 +69,27 @@ namespace IronTower.Web.Controllers
                     return f.Id;
                 }
             }
-            return 0;
+            return -1;
         }
 
+        //GET: Games/PossibleFloors
+        public ActionResult PossibleFloors()
+        {
+            var game = db.Games.First();
+            var PossibleFloors = new List<Floor>();
+            for(int i = 1; i < game.TotalFloorTypes; i++)
+            {
+                var floor = new Floor(i);
+                if(game.Money < floor.BuildCost)
+                {
+                    break; 
+                }
+
+                PossibleFloors.Add(floor);
+            }
+
+            return Json(PossibleFloors);
+        }
         //GET: Games/AddFloor 
         public ActionResult AddFloor()
         {
@@ -119,7 +136,8 @@ namespace IronTower.Web.Controllers
                     }
                 }
             }
-
+            game.Message = "No unemployed tenants!";
+            game.MessageType = 2;
             return Json(db.Games.ToList());
         }
 
@@ -131,38 +149,10 @@ namespace IronTower.Web.Controllers
         }
 
         // GET: Games/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Game game = db.Games.Find(id);
-            if (game == null)
-            {
-                return HttpNotFound();
-            }
-            return View(game);
-        }
-
-        // POST: Games/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Game game = db.Games.Find(id);
-            db.Games.Remove(game);
-            db.SaveChanges();
-            return Json(game);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            //Delete all stuff
+            return Content("Done!");
         }
     }
 }
