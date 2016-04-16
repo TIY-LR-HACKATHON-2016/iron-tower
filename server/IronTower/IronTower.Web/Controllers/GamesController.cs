@@ -22,8 +22,8 @@ namespace IronTower.Web.Controllers
         //GET: Games/AddFloor 
         public ActionResult AddFloor()
         {
-            var game = db.Games.ToList();
-            game.First().Tower.ToList().Add(new Floor(FloorType.Empty));
+            var game = db.Games.First();
+            game.Tower.ToList().Add(new Floor(FloorType.Empty));
             db.SaveChanges();
             return Json(db.Games.ToList());
         }
@@ -31,6 +31,21 @@ namespace IronTower.Web.Controllers
         //GET: Games/AddPerson/{id}
         public ActionResult AddPerson(int id)
         {
+            var tower = db.Games.First().Tower.ToList();
+            foreach (var f in tower)
+            {
+                foreach(var p in f.People)
+                {
+                    if(p.Work == null)
+                    {
+                        p.Work = f;
+
+                        db.SaveChanges();
+                        return Json(db.Games.ToList());
+                    }
+                }
+            }
+                db.SaveChanges();
             return Json(db.Games.ToList());
         }
 
