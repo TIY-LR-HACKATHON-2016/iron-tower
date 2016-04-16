@@ -85,6 +85,7 @@ namespace IronTower.Web.Controllers
                         {
                             p.Work = game.Tower.ToList()[id];
                             game.Tower.ToList()[id].NumPeople++;
+                            
                             //add to tower floor list?
 
                             //change floors earnings
