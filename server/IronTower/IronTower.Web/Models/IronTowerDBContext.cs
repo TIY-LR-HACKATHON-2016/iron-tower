@@ -17,8 +17,10 @@ public class IronTowerDBContext : DbContext
     {
     }
 
+
     public System.Data.Entity.DbSet<IronTower.Web.Models.Game> Games { get; set; }
     public System.Data.Entity.DbSet<IronTower.Web.Models.Person> Persons { get; set; }
     public System.Data.Entity.DbSet<IronTower.Web.Models.Floor> Floors { get; set; }
+    public System.Data.Entity.DbSet<IronTower.Web.Models.FloorType> FloorTypes { get; set; }
 
 }

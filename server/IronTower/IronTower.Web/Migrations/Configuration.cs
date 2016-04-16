@@ -28,6 +28,11 @@ namespace IronTower.Web.Migrations
             //    );
             //
 
+            context.FloorTypes.AddOrUpdate(x => x.Name,
+                new FloorType() { BuildCost = 0, Category = FloorCategory.Empty, Name = "Empty Floor", },
+                new FloorType() { BuildCost = 200, Category = FloorCategory.Business, Name = "McDonalds", PeopleLimit = 2, Earning = 25, EarningIncrease = 2 },
+                new FloorType() { BuildCost = 200, Category = FloorCategory.Apartment, Name = "Bungelo", PeopleLimit = 2 }
+                );
         }
     }
 }

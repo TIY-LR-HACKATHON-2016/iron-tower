@@ -12,6 +12,7 @@ namespace IronTower.Web.Models
         public int? WorkId { get; set; }
         public virtual Floor Work { get; set; }
         public string Name { get; set; }
+        public Game Game { get; set; }
 
         public Person()
         {

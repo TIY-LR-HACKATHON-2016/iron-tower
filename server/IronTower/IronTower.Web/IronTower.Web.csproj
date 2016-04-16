@@ -137,25 +137,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604160326240_InitialTables.cs" />
-    <Compile Include="Migrations\201604160326240_InitialTables.Designer.cs">
-      <DependentUpon>201604160326240_InitialTables.cs</DependentUpon>
+    <Compile Include="Migrations\201604161942502_InitialCreate.cs" />
+    <Compile Include="Migrations\201604161942502_InitialCreate.Designer.cs">
+      <DependentUpon>201604161942502_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604161558223_FloorFields.cs" />
-    <Compile Include="Migrations\201604161558223_FloorFields.Designer.cs">
-      <DependentUpon>201604161558223_FloorFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604161648599_ChangedIEnumerable.cs" />
-    <Compile Include="Migrations\201604161648599_ChangedIEnumerable.Designer.cs">
-      <DependentUpon>201604161648599_ChangedIEnumerable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604161747062_FirstTimeAdjust.cs" />
-    <Compile Include="Migrations\201604161747062_FirstTimeAdjust.Designer.cs">
-      <DependentUpon>201604161747062_FirstTimeAdjust.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604161820255_fixedSchemaError.cs" />
-    <Compile Include="Migrations\201604161820255_fixedSchemaError.Designer.cs">
-      <DependentUpon>201604161820255_fixedSchemaError.cs</DependentUpon>
+    <Compile Include="Migrations\201604161946513_RemovedTotalFloorTypes.cs" />
+    <Compile Include="Migrations\201604161946513_RemovedTotalFloorTypes.Designer.cs">
+      <DependentUpon>201604161946513_RemovedTotalFloorTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
@@ -214,20 +202,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604160326240_InitialTables.resx">
-      <DependentUpon>201604160326240_InitialTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604161942502_InitialCreate.resx">
+      <DependentUpon>201604161942502_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604161558223_FloorFields.resx">
-      <DependentUpon>201604161558223_FloorFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604161648599_ChangedIEnumerable.resx">
-      <DependentUpon>201604161648599_ChangedIEnumerable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604161747062_FirstTimeAdjust.resx">
-      <DependentUpon>201604161747062_FirstTimeAdjust.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604161820255_fixedSchemaError.resx">
-      <DependentUpon>201604161820255_fixedSchemaError.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604161946513_RemovedTotalFloorTypes.resx">
+      <DependentUpon>201604161946513_RemovedTotalFloorTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

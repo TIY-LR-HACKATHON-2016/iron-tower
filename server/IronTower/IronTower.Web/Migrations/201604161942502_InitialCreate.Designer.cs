@@ -7,13 +7,13 @@ namespace IronTower.Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangedIEnumerable : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedIEnumerable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604161648599_ChangedIEnumerable"; }
+            get { return "201604161942502_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

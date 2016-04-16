@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using IronTower.Web.Models;
 
@@ -12,19 +7,12 @@ namespace IronTower.Web.Controllers
 {
     public class GamesController : Controller
     {
-        private IronTowerDBContext db = new IronTowerDBContext();
+        private readonly IronTowerDBContext db = new IronTowerDBContext();
 
-        //Get: Games/PlayerName/{name}
+        [HttpPost]
         public void PlayerName(string name)
         {
-            if (name == null)
-            {
-                db.Games.First().Name = "Player";
-            }
-            else
-            {
-                db.Games.First().Name = name;
-            }
+            db.Games.First().Name = name ?? "Player";
 
             db.SaveChanges();
         }
@@ -32,13 +20,13 @@ namespace IronTower.Web.Controllers
         // GET: Games
         public ActionResult GameState()
         {
-
-            if (db.Games.First() == null)
+            var game = db.Games.FirstOrDefault();
+            if (game == null)
             {
-                db.Games.Add(new Game());
+                game = new Game();
+                db.Games.Add(game);
             }
 
-            var game = db.Games.First();
 
             //initialize each game state
             game.Message = "";
@@ -52,57 +40,34 @@ namespace IronTower.Web.Controllers
             }
 
             //add tennant?
-            var floorid = CanAddTennant(game);
-            if (floorid >= 0 && (DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
+            if ((DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
             {
-                var person = new Person()
+                var floor =
+                    game.Tower.Where(x => x.FloorType.IsApartment)
+                        .FirstOrDefault(x => x.NumPeople < x.FloorType.PeopleLimit);
+                if (floor != null)
                 {
-                    HomeId = floorid
-                };
-
-                db.Persons.Add(person);
-                game.Tower.ToList()[floorid].People.ToList().Add(person);
-                game.Tower.ToList()[floorid].NumPeople++;
-
-                game.LastTenant = DateTime.Now;
-                game.Message = "New Tenant has arrived!";
-                game.MessageType = 1;
+                    floor.People.Add(new Person {Game = game, Home = floor});
+                    game.LastTenant = DateTime.Now;
+                    game.Message = "New Tenant has arrived!";
+                    game.MessageType = 1;
+                }
             }
-
             db.SaveChanges();
             return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
         }
 
-        private int CanAddTennant(Game game)
-        {
-            foreach (var f in game.Tower)
-            {
-                if (f.isApartment && f.PeopleLimit > f.NumPeople)
-                {
-                    return f.Id;
-                }
-            }
-            return -1;
-        }
 
         //GET: Games/PossibleFloors
         public ActionResult PossibleFloors()
         {
             var game = db.Games.First();
-            var PossibleFloors = new List<Floor>();
-            for(int i = 1; i < game.TotalFloorTypes; i++)
-            {
-                var floor = new Floor(i);
-                if(game.Money < floor.BuildCost)
-                {
-                    break; 
-                }
+            var model = db.FloorTypes.ToList().Where(x => x.BuildCost < game.Money)
+                .Select(x => new {x.Name, x.PeopleLimit, x.Category, x.BuildCost, x.Earning});
 
-                PossibleFloors.Add(floor);
-            }
-
-            return Json(PossibleFloors, JsonRequestBehavior.AllowGet);
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
+
         //GET: Games/AddFloor 
         public ActionResult AddFloor()
         {
@@ -115,7 +80,9 @@ namespace IronTower.Web.Controllers
                 return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
             }
 
-            game.Tower.ToList().Add(new Floor(0));
+            var f = new Floor {FloorType = db.FloorTypes.FirstOrDefault(x => x.Category == FloorCategory.Empty)};
+
+            game.Tower.Add(f);
 
             game.Money -= game.NextFloorCost;
             game.NextFloorCost *= game.NextFloorCostIncrease;
@@ -129,85 +96,60 @@ namespace IronTower.Web.Controllers
         {
             var game = db.Games.First();
 
-            foreach (var f in game.Tower)
+            var businessFloor = game.Tower.FirstOrDefault(x => x.Id == id);
+            if (businessFloor == null)
             {
-                if (f.isApartment == true)
-                {
-                    foreach (var p in f.People)
-                    {
-                        if (p.Work == null)
-                        {
-                            p.Work = game.Tower.ToList()[id];
-                            game.Tower.ToList()[id].NumPeople++;
-
-                            //add to tower floor list?
-
-                            //change floors earnings
-                            if (f.NumPeople > 1)
-                            {
-                                db.Games.First().MoneyPerMin -= f.Earning;
-                                f.Earning *= f.EarningIncrease;
-                            }
-
-                            db.Games.First().MoneyPerMin += f.Earning;
-                            db.Games.First().Unemployed--;
-
-                            db.SaveChanges();
-                            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
-                        }
-                    }
-                }
+                return HttpNotFound("Can't find business");
             }
 
-            game.Message = "No unemployed tenants!";
-            game.MessageType = 2;
-            return Json(db.Games, JsonRequestBehavior.AllowGet);
+
+            var unemployedGuy = game.People.FirstOrDefault(x => x.Work == null);
+            if (unemployedGuy == null)
+            {
+                return Content("Nobody available");
+            }
+
+            unemployedGuy.Work = businessFloor;
+
+            db.SaveChanges();
+
+            return Content("OK");
         }
 
         //GET: Games/ChangeFloor/{id}
-        public ActionResult ChangeFloor(int id, int type)
+        public ActionResult ChangeFloor(int floorid, int floorTypeId)
         {
             var game = db.Games.First();
-            var floor = new Floor(type);
 
-            if(game.Money >= floor.BuildCost)
+            var floor = db.Floors.Find(floorid);
+            var floorType = db.FloorTypes.Find(floorTypeId);
+
+            if (floorType.BuildCost >= game.Money)
             {
-                //change floor 
-                game.Tower.ToList().RemoveAt(id);
-                game.Tower.ToList().Add(floor);
-                game.Money -= floor.BuildCost;
-                
-                //check new PeopleLimit
-                game.PeopleLimit = PossibleTenatTotal(game);
-            }
-            else
-            {
-                game.Message = "Not enough money!";
-                game.MessageType = 2;
+                return Content("Not Enough Money");
             }
 
+
+            //change floor 
+            floor.FloorType = floorType;
+            game.Money -= floorType.BuildCost;
             db.SaveChanges();
+
             return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
         }
 
-        public int PossibleTenatTotal(Game game)
-        {
-            var total = 0;
-            foreach(var f in game.Tower)
-            {
-                if(f.isApartment)
-                {
-                    total += f.PeopleLimit;
-                }
-            }
-
-            return total;
-        }
 
         // GET: Games/Delete
         public ActionResult Delete()
         {
             //Delete all stuff
+            var game = db.Games.FirstOrDefault();
+            if (game != null)
+            {
+                db.Games.Remove(game);
+                db.SaveChanges();
+            }
+
             return Content("Done!");
         }
     }

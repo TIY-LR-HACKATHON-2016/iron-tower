@@ -14,7 +14,6 @@ namespace IronTower.Web.Models
         public int NextFloorCost { get; set; } = 600; //starting
         public string Message { get; set; }
         public int MessageType { get; set; } //0 nothing, 1 good, 2 bad
-        public int PeopleLimit { get; set; }
         public int Unemployed { get; set; }
         public DateTime LastTenant { get; set; } = DateTime.Now;
         public DateTime LastPaid { get; set; } = DateTime.Now;
@@ -22,7 +21,6 @@ namespace IronTower.Web.Models
         //game balance
         public int TennantInterval { get; set; } = 60; //seconds
         public int NextFloorCostIncrease { get; set; } = 2; //multiplier
-        public int TotalFloorTypes { get; set; } = 2; //change as add floors (ignore 0)
 
         public virtual ICollection<Person> People { get; set; } = new List<Person>();
         public virtual ICollection<Floor> Tower { get; set; } = new List<Floor>();
@@ -36,5 +34,9 @@ namespace IronTower.Web.Models
         {
             Name = name;
         }
+
+
+
+
     }
 }
