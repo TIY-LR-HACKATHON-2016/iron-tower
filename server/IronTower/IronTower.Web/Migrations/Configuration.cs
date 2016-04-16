@@ -28,11 +28,6 @@ namespace IronTower.Web.Migrations
             //    );
             //
 
-            if(!context.Games.Any())
-            {
-                context.Games.Add(new Game());
-                context.SaveChanges();
-            }
         }
     }
 }

@@ -32,6 +32,12 @@ namespace IronTower.Web.Controllers
         // GET: Games
         public ActionResult GameState()
         {
+
+            if (db.Games.First() == null)
+            {
+                db.Games.Add(new Game());
+            }
+
             var game = db.Games.First();
 
             //initialize each game state
@@ -49,7 +55,13 @@ namespace IronTower.Web.Controllers
             var floorid = CanAddTennant(game);
             if (floorid >= 0 && (DateTime.Now - game.LastTenant).Seconds > game.TennantInterval)
             {
-                game.Tower.ToList()[floorid].People.ToList().Add(new Person());
+                var person = new Person()
+                {
+                    HomeId = floorid
+                };
+
+                db.Persons.Add(person);
+                game.Tower.ToList()[floorid].People.ToList().Add(person);
                 game.Tower.ToList()[floorid].NumPeople++;
 
                 game.LastTenant = DateTime.Now;
@@ -192,7 +204,7 @@ namespace IronTower.Web.Controllers
             return total;
         }
 
-        // GET: Games/Delete/5
+        // GET: Games/Delete
         public ActionResult Delete()
         {
             //Delete all stuff

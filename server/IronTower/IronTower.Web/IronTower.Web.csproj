@@ -149,6 +149,14 @@
     <Compile Include="Migrations\201604161648599_ChangedIEnumerable.Designer.cs">
       <DependentUpon>201604161648599_ChangedIEnumerable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604161747062_FirstTimeAdjust.cs" />
+    <Compile Include="Migrations\201604161747062_FirstTimeAdjust.Designer.cs">
+      <DependentUpon>201604161747062_FirstTimeAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604161820255_fixedSchemaError.cs" />
+    <Compile Include="Migrations\201604161820255_fixedSchemaError.Designer.cs">
+      <DependentUpon>201604161820255_fixedSchemaError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -214,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604161648599_ChangedIEnumerable.resx">
       <DependentUpon>201604161648599_ChangedIEnumerable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604161747062_FirstTimeAdjust.resx">
+      <DependentUpon>201604161747062_FirstTimeAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604161820255_fixedSchemaError.resx">
+      <DependentUpon>201604161820255_fixedSchemaError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
