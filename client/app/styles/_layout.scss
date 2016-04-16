@@ -162,7 +162,14 @@ html, body, .container{
   height: 180px;
   background-color: #457746;
   background-repeat: no-repeat;
-  background-image: url('http://static.wixstatic.com/media/80b5a8_b4cdca6c0edf4f84b29cbccd436845a8.jpg/v1/fill/w_900,h_180,al_c,q_80/80b5a8_b4cdca6c0edf4f84b29cbccd436845a8.jpg');
+  background-image: url('');
+
+  .apimage {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
+
+  }
 
   .apartmenthead {
     width: 900px;
@@ -175,35 +182,13 @@ html, body, .container{
     margin: 2px 700px 0 0;
     float: right;
     color: white;
+
   }
 
   .fa.fa-building {
     margin: 2px 0 0 5px;
     float: left;
-
   }
-
-  .fa.fa-bed {
-    float: right;
-    margin: 91px 400px 0 0;
-    font-size: 5rem;
-  }
-
-  .door {
-    width: 90px;
-    height: 110px;
-    margin: 40px 0 0 40px;
-    background-color: green;
-    float: left;
-    border: 5px solid #795d38;
-    background-image: url('https://www.stonewoodproducts.com/wp-content/uploads/ewpt_cache/90x110_85_1_c_FFFFFF_33effae2ea9be39e719f53ca9a8c427d.jpg');
-  }
-
-  .fa.fa-circle {
-    float: right;
-    margin: 55px 8px 0 0;
-  }
-
 
 }
 
@@ -230,11 +215,6 @@ html, body, .container{
   }
 }
 
-.button {
-  width: 900px;
-  height: 180px;
-  background-color: orange;
-}
 
 .wholebuttondiv {
   width: 900px;
