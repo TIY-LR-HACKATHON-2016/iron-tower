@@ -1,13 +1,22 @@
 
 
-
+<div class="container">
+  <div id="cloud-intro"></div>
+</div>
+  <img src="http://btstrategy.com/wp-new/wp-content/uploads/2013/10/cloud2_55171579.jpg">
 
 <div class="city">
 
-  <div class="leftbox">
-    <h1> Name: {{ gameCtrl.Game.Name }} </h1>
 
-    <h2> Coin/Min: {{ gameCtrl.Game.MoneyPerMin }} </h2>
+
+  <div class="leftbox">
+    <h1> Name: </h1>
+
+    <h2> {{ gameCtrl.game.Name }} <h2>
+
+    <h1> Coin/Min: </h1>
+
+    <h3> {{ gameCtrl.game.MoneyPerMin }} </h3>
 
   </div>
 
@@ -40,9 +49,9 @@
 
 <div class="footer">
   <img class="footercoin" src="http://hydra-media.cursecdn.com/crafttheworld.gamepedia.com/thumb/6/6d/Coin.png/50px-Coin.png?version=ea00541e8b483ddfd83045745a11ce8a"/>
-  <p class="gamemoney"> {{ gameCtrl.game.money }} </p>
+  <p class="gamemoney"> {{ gameCtrl.game.Money }} </p>
   <i class="fa fa-male" aria-hidden="true"></i>
-  <p class="unemployed"> {{ gameCtrl.game.unemployed }} </p>
+  <p class="unemployed"> {{ gameCtrl.game.Unemployed }} </p>
 
 
 </div>

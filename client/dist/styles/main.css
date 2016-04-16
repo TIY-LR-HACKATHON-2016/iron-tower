@@ -2,6 +2,32 @@ body {
   height: 100%;
   margin: 0; }
 
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.container {
+  background-color: #007ced;
+  background: linear-gradient(to bottom, #007ced 1%, #cce7ff 100%); }
+
+#cloud-intro {
+  position: relative;
+  height: 100%;
+  background: url(http://static.radulescu.me/examples/clouds/clouds1000.png);
+  background: url(http://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px, url(http://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px, url(http://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;
+  animation: wind 20s linear infinite; }
+
+@keyframes wind {
+  0% {
+    background-position: 0 200px, 0 300px, 100px 250px; }
+  100% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px; } }
+
 .tower {
   height: 850px;
   width: 900px;
@@ -33,14 +59,18 @@ body {
     float: left; }
   .footer .gamemoney {
     float: left;
-    margin: 30px 0 0 20px; }
+    margin: 26px 0 0 20px;
+    font-size: 2rem;
+    font-family: 'Orbitron', sans-serif; }
   .footer .fa.fa-male {
     float: left;
     margin: 23px 0 0 20px;
     font-size: 2rem; }
   .footer .unemployed {
     float: left;
-    margin: 31px 0 0 20px; }
+    margin: 25px 0 0 20px;
+    font-size: 2rem;
+    font-family: 'Orbitron', sans-serif; }
 
 .buy {
   width: 100%;
@@ -50,12 +80,18 @@ body {
     background-color: lightgray; }
 
 .leftbox {
+  position: fixed;
   float: left;
   margin-left: 20px;
   margin-top: 20px; }
   .leftbox h1 {
-    color: white;
-    text-shadow: 3px 3px 3px black; }
+    color: #795D38;
+    text-shadow: 3px 3px 3px black;
+    font-family: 'Orbitron', sans-serif; }
   .leftbox h2 {
-    color: white;
-    text-shadow: 3px 3px 3px black; }
+    color: #795D38;
+    text-shadow: 3px 3px 3px black;
+    font-family: 'Rock Salt', cursive;
+    font-size: 40px; }
+  .leftbox h3 {
+    font-family: 'Orbitron', sans-serif; }
