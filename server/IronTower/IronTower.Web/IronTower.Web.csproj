@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201604160326240_InitialTables.Designer.cs">
       <DependentUpon>201604160326240_InitialTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604161558223_FloorFields.cs" />
+    <Compile Include="Migrations\201604161558223_FloorFields.Designer.cs">
+      <DependentUpon>201604161558223_FloorFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -157,6 +161,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\IronTower2016.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -199,6 +204,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604160326240_InitialTables.resx">
       <DependentUpon>201604160326240_InitialTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604161558223_FloorFields.resx">
+      <DependentUpon>201604161558223_FloorFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

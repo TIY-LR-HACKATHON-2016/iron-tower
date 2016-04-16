@@ -16,8 +16,8 @@ namespace IronTower.Web.Models
         public int MessageType { get; set; } //0 nothing, 1 good, 2 bad
         public int PeopleLimit { get; set; }
         public int Unemployed { get; set; }
-        public DateTime LastTenant { get; set; } = new DateTime();
-        public DateTime LastPaid { get; set; } = new DateTime();
+        public DateTime LastTenant { get; set; } = DateTime.Now;
+        public DateTime LastPaid { get; set; } = DateTime.Now;
 
         //game balance
         public int TennantInterval { get; set; } = 60; //seconds
@@ -26,6 +26,11 @@ namespace IronTower.Web.Models
 
         public virtual IEnumerable<Person> People { get; set; } = new List<Person>();
         public virtual IEnumerable<Floor> Tower { get; set; } = new List<Floor>();
+
+        public Game()
+        {
+
+        }
 
         public Game(string name)
         {

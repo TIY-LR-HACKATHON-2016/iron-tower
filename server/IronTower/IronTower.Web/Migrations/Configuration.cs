@@ -1,5 +1,6 @@
 namespace IronTower.Web.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,12 @@ namespace IronTower.Web.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            if(!context.Games.Any())
+            {
+                context.Games.Add(new Game());
+                context.SaveChanges();
+            }
         }
     }
 }

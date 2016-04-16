@@ -29,6 +29,10 @@ namespace IronTower.Web.Models
         //  PeopleLimit
         //  BuildCost
         //}
+        public Floor()
+        {
+
+        }
 
         public Floor(int type)
         {

@@ -58,7 +58,7 @@ namespace IronTower.Web.Controllers
             }
 
             db.SaveChanges();
-            return Json(db.Games.ToList());
+            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         private int CanAddTennant(Game game)
@@ -160,6 +160,7 @@ namespace IronTower.Web.Controllers
 
             if(game.Money >= floor.BuildCost)
             {
+                //change floor 
                 game.Tower.ToList().Add(floor);
                 game.Money -= floor.BuildCost;
                 
