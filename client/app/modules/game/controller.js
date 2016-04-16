@@ -3,7 +3,9 @@ class GameController {
     this._$http = $http;
     this.$stateParams = $stateParams;
     this.getData();
+    this.possibleFloors();
     $interval(this.getData.bind(this), 1000);
+    $interval(this.possibleFloors.bind(this), 5000);
   }
 
   buyFloor() {
@@ -15,9 +17,27 @@ class GameController {
 
   }
 
-  changeFloor(floor) {
-    
+  possibleFloors() {
+    this._$http.get("http://irontower2016.azurewebsites.net/Games/PossibleFloors").then((response) => {
+      console.log(response)
+      this.possibleFloors = response.data;
+    })
   }
+
+  playerNames() {
+    this._$http.get("http://irontower2016.azurewebsites.net/Games/PlayerNames").then((response) => {
+      console.log(response)
+      this.playerNames = response.data;
+    })
+  }
+
+
+  //
+  // changeFloor(floor) {
+  //   this._$http.post("http://irontower2016.azurewebsites.net/Games/", {
+  //
+  //   })
+  // }
 
   getData() {
   //   this.game = {
@@ -51,7 +71,6 @@ class GameController {
   //  console.log(response);
    let results = response.data[0];
    this.game = results;
-
  })
 
 

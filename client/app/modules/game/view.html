@@ -40,13 +40,18 @@
             <div class="wholebuttondiv">
 
               <div class="buttonleft">
-                <input class="leftb" type="submit" value="Residence" ng-click="">
+              <select>
+                <option ng-repeat="floor in gameCtrl.possibleFloors" value="{{floor.FloorType}}">
+                    apartment - ${{floor.BuildCost}}
+                </option>
+
+               </select>
 
 
               </div>
 
               <div class="buttonright">
-                <input class="rightb" type="submit" value="Business" ng-click="">
+                <input class="rightb" type="submit" value="Buy" ng-click="">
 
               </div>
 
