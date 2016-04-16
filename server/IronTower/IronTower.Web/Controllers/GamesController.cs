@@ -14,8 +14,8 @@ namespace IronTower.Web.Controllers
     {
         private IronTowerDBContext db = new IronTowerDBContext();
 
-        //Get: New
-        public void New(string name)
+        //Get: Games/PlayerName/{name}
+        public void PlayerName(string name)
         {
             if (name == null)
             {
