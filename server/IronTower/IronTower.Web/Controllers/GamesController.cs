@@ -19,11 +19,11 @@ namespace IronTower.Web.Controllers
         {
             if (name == null)
             {
-                db.Games.Add(new Game("Player"));
+                db.Games.First().Name = "Player";
             }
             else
             {
-                db.Games.Add(new Game(name));
+                db.Games.First().Name = name;
             }
 
             db.SaveChanges();
@@ -89,7 +89,7 @@ namespace IronTower.Web.Controllers
                 PossibleFloors.Add(floor);
             }
 
-            return Json(PossibleFloors);
+            return Json(PossibleFloors, JsonRequestBehavior.AllowGet);
         }
         //GET: Games/AddFloor 
         public ActionResult AddFloor()
@@ -100,7 +100,7 @@ namespace IronTower.Web.Controllers
             {
                 game.Message = "Not enough money";
                 game.MessageType = 2;
-                return Json(db.Games.ToList());
+                return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
             }
 
             game.Tower.ToList().Add(new Floor(0));
@@ -109,7 +109,7 @@ namespace IronTower.Web.Controllers
             game.NextFloorCost *= game.NextFloorCostIncrease;
 
             db.SaveChanges();
-            return Json(db.Games.ToList());
+            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         //GET: Games/AddEmployee/{id}
@@ -141,7 +141,7 @@ namespace IronTower.Web.Controllers
                             db.Games.First().Unemployed--;
 
                             db.SaveChanges();
-                            return Json(db.Games.ToList());
+                            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
                         }
                     }
                 }
@@ -149,7 +149,7 @@ namespace IronTower.Web.Controllers
 
             game.Message = "No unemployed tenants!";
             game.MessageType = 2;
-            return Json(db.Games.ToList());
+            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         //GET: Games/ChangeFloor/{id}
@@ -174,7 +174,7 @@ namespace IronTower.Web.Controllers
             }
 
             db.SaveChanges();
-            return Json(db.Games.ToList());
+            return Json(db.Games.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         public int PossibleTenatTotal(Game game)
