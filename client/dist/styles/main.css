@@ -118,12 +118,46 @@ html, body, .container {
 .apartment {
   width: 900px;
   height: 180px;
-  background-color: blue; }
+  background-color: #457746;
+  background-repeat: no-repeat; }
+  .apartment .apartmenthead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A; }
+  .apartment .floortitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .apartment .fa.fa-building {
+    margin: 2px 0 0 5px;
+    float: left; }
+  .apartment .fa.fa-bed {
+    float: right;
+    margin: 91px 400px 0 0;
+    font-size: 5rem; }
+  .apartment .door {
+    width: 90px;
+    height: 110px;
+    margin: 40px 0 0 40px;
+    background-color: green;
+    float: left;
+    border: 5px solid black; }
 
 .business {
   width: 900px;
   height: 180px;
-  background-color: goldenrod; }
+  background-color: #565587; }
+  .business .businesshead {
+    width: 900px;
+    height: 20px;
+    background-color: #636194; }
+  .business .floortitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .business .fa.fa-briefcase {
+    margin: 2px 0 0 5px;
+    float: left; }
 
 .button {
   width: 900px;
@@ -144,7 +178,8 @@ html, body, .container {
     background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
     color: red;
     font-size: 20px;
-    font-family: cursive; }
+    font-family: cursive;
+    outline: none; }
   .wholebuttondiv .rightb {
     width: 100px;
     height: 50px;
@@ -154,7 +189,8 @@ html, body, .container {
     background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
     color: red;
     font-size: 20px;
-    font-family: cursive; }
+    font-family: cursive;
+    outline: none; }
   .wholebuttondiv .buttonleft {
     width: 450px;
     height: 180px;

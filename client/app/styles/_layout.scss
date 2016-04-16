@@ -160,13 +160,66 @@ html, body, .container{
 .apartment {
   width: 900px;
   height: 180px;
-  background-color: blue;
+  background-color: #457746;
+  background-repeat: no-repeat;
+
+  .apartmenthead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A;
+  }
+
+  .floortitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white;
+  }
+
+  .fa.fa-building {
+    margin: 2px 0 0 5px;
+    float: left;
+
+  }
+
+  .fa.fa-bed {
+    float: right;
+    margin: 91px 400px 0 0;
+    font-size: 5rem;
+  }
+
+  .door {
+    width: 90px;
+    height: 110px;
+    margin: 40px 0 0 40px;
+    background-color: green;
+    float: left;
+    border: 5px solid black;
+  }
+
+
 }
 
 .business {
   width: 900px;
   height: 180px;
-  background-color: goldenrod;
+  background-color: #565587;
+
+  .businesshead {
+    width: 900px;
+    height: 20px;
+    background-color: #636194;
+  }
+
+  .floortitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white;
+  }
+
+  .fa.fa-briefcase {
+    margin: 2px 0 0 5px;
+    float: left;
+  }
 }
 
 .button {
@@ -192,6 +245,8 @@ html, body, .container{
     color: red;
     font-size: 20px;
     font-family: cursive;
+    outline: none;
+
   }
 
   .rightb {
@@ -204,6 +259,7 @@ html, body, .container{
     color: red;
     font-size: 20px;
     font-family: cursive;
+    outline: none;
   }
 
   .buttonleft {
