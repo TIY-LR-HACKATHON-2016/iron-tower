@@ -4,7 +4,7 @@ import controller from './controller';
 
 let game = angular.module('tiy.game', []);
 
-characters.config(config);
-characters.controller('GameController', controller);
+game.config(config);
+game.controller('GameController', controller);
 
 export default game;
