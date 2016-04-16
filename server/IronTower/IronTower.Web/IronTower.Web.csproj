@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201604162043390_NewFloors36.Designer.cs">
       <DependentUpon>201604162043390_NewFloors36.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604162207510_fixseed.cs" />
+    <Compile Include="Migrations\201604162207510_fixseed.Designer.cs">
+      <DependentUpon>201604162207510_fixseed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -214,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604162043390_NewFloors36.resx">
       <DependentUpon>201604162043390_NewFloors36.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604162207510_fixseed.resx">
+      <DependentUpon>201604162207510_fixseed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
