@@ -94,8 +94,16 @@ namespace IronTower.Web.Controllers
         public ActionResult AddFloor()
         {
             var game = db.Games.First();
+            if(game.Money < game.NextFloorCost)
+            {
+                game.Message = "Not enough money";
+                game.MessageType = 2;
+                return Json(db.Games.ToList());
+            }
+
             game.Tower.ToList().Add(new Floor(0));
 
+            game.Money -= game.NextFloorCost;
             game.NextFloorCost *= game.NextFloorCostIncrease;
 
             db.SaveChanges();
