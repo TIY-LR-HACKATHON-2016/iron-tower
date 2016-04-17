@@ -10,7 +10,7 @@ namespace IronTower.Web.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = "Player"; //change in game creation
-        public int Money { get; set; } = 1000; //starting money watch first 
+        public int Money { get; set; } = 2000; //starting money watch first 
         public int MoneyPerMin { get; set; } = 10; // starting
         public int NextFloorCost { get; set; } = 600; //starting
         public string Message { get; set; }
