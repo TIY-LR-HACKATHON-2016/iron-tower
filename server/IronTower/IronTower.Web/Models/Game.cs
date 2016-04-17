@@ -10,7 +10,7 @@ namespace IronTower.Web.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = "Player"; //change in game creation
-        public int Money { get; set; } = 2000; //starting money watch first 
+        public int Money { get; set; } = 3000; //starting money watch first 
         public int MoneyPerMin { get; set; } = 10; // starting
         public int NextFloorCost { get; set; } = 600; //starting
         public string Message { get; set; }
@@ -20,7 +20,7 @@ namespace IronTower.Web.Models
         public DateTime LastPaid { get; set; } = DateTime.Now;
 
         //game balance
-        public int TennantInterval { get; set; } = 60; //seconds
+        public int TennantInterval { get; set; } = 2; //seconds
         public int NextFloorCostIncrease { get; set; } = 2; //multiplier
 
         public virtual ICollection<Person> People { get; set; } = new List<Person>();
