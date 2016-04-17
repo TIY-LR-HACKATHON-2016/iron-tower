@@ -293,11 +293,13 @@ html, body, .container {
     float: right;
     border-radius: 20px;
     margin: 55px 160px 0 0;
-    background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
-    color: red;
+    background-color: #795d38;
+    color: #FCDD61;
     font-size: 20px;
     font-family: cursive;
-    outline: none; }
+    outline: none;
+    border-color: #FCDD61;
+    box-shadow: 6px 6px 6px black; }
   .wholebuttondiv select {
     margin: 70px 0 0 180px; }
   .wholebuttondiv .imageempty {
