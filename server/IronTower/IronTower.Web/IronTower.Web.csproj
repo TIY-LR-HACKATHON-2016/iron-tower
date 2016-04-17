@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201604162307102_InitialCreate.Designer.cs">
       <DependentUpon>201604162307102_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604171649182_EmployeeAndFloor.cs" />
+    <Compile Include="Migrations\201604171649182_EmployeeAndFloor.Designer.cs">
+      <DependentUpon>201604171649182_EmployeeAndFloor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IronTowerDBContext.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -200,6 +204,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604162307102_InitialCreate.resx">
       <DependentUpon>201604162307102_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604171649182_EmployeeAndFloor.resx">
+      <DependentUpon>201604171649182_EmployeeAndFloor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

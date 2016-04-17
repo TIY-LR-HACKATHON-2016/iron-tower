@@ -36,14 +36,12 @@ namespace IronTower.Web.Controllers
         // GET: Games
         public ActionResult GameState()
         {
-            //initialize each game state
-            CurrentGame.Message = "";
-            CurrentGame.MessageType = 0;
 
             //add money?
-            if ((DateTime.Now - CurrentGame.LastPaid).Seconds >= 30)
+            var minutespassed = (DateTime.Now - CurrentGame.LastPaid).TotalMinutes;
+            if (minutespassed >= 1)
             {
-                CurrentGame.Money += CurrentGame.MoneyPerMin;
+                CurrentGame.Money += (int)(CalculateMPM()*minutespassed);
                 CurrentGame.LastPaid = DateTime.Now;
             }
 
@@ -57,9 +55,6 @@ namespace IronTower.Web.Controllers
                 {
                     floor.People.Add(new Person { Game = CurrentGame, Home = floor });
                     CurrentGame.LastTenant = DateTime.Now;
-                    CurrentGame.Unemployed++;
-                    CurrentGame.Message = "New Tenant has arrived!";
-                    CurrentGame.MessageType = 1;
                 }
             }
             db.SaveChanges();
@@ -74,14 +69,25 @@ namespace IronTower.Web.Controllers
                 CurrentGame.Id,
                 CurrentGame.Name,
                 CurrentGame.Money,
-                CurrentGame.MoneyPerMin,
+                MoneyPerMin = CalculateMPM(),
                 CurrentGame.NextFloorCost,
-                CurrentGame.Unemployed,
+                Unemployed = CurrentGame.People.Count(x => x.Work == null),
                 Tower = CurrentGame.Tower.Select(x => new { FloorId = x.Id, FloorName = x.FloorType.Name, FloorTypeId = x.FloorType.Id, x.FloorType.PeopleLimit, x.NumPeople}).ToList()
             };
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
+        private int CalculateMPM()
+        {
+            var businessFloors = CurrentGame.Tower.Where(x => x.FloorType.Category == FloorCategory.Business).Where(x=>x.NumPeople > 0);
+
+            var mpm =
+                businessFloors.Sum(
+                    floor => floor.FloorType.Earning + (floor.FloorType.EarningIncrease*(floor.NumPeople - 1)));
+            return mpm;
+        }
+
+      
 
         //GET: Games/PossibleFloors
         public ActionResult PossibleFloors()
@@ -98,8 +104,6 @@ namespace IronTower.Web.Controllers
 
             if (CurrentGame.Money < CurrentGame.NextFloorCost)
             {
-                CurrentGame.Message = "Not enough money";
-                CurrentGame.MessageType = 2;
                 return JsonGame();
             }
 
@@ -107,9 +111,7 @@ namespace IronTower.Web.Controllers
 
             CurrentGame.Tower.Add(f);
 
-            var halfFloorCost = CurrentGame.NextFloorCost/CurrentGame.NextFloorCostIncrease;
             CurrentGame.Money -= CurrentGame.NextFloorCost;
-            CurrentGame.NextFloorCost += halfFloorCost;
 
             db.SaveChanges();
             return JsonGame();
@@ -134,16 +136,7 @@ namespace IronTower.Web.Controllers
             unemployedGuy.Work = businessFloor;
             businessFloor.People.Add(unemployedGuy);
 
-            var moneyPerMinuteChange = businessFloor.FloorType.Earning;
-
-            if (businessFloor.NumPeople > 1)
-            {
-                CurrentGame.Money -= businessFloor.FloorType.Earning;
-                moneyPerMinuteChange = businessFloor.FloorType.Earning*businessFloor.FloorType.EarningIncrease;
-            }
-
-            CurrentGame.Unemployed--;
-            CurrentGame.MoneyPerMin += moneyPerMinuteChange;
+           
             db.SaveChanges();
 
             return JsonGame();
