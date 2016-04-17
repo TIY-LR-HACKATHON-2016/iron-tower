@@ -130,7 +130,7 @@ html, body, .container{
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     text-align: center;
-    color: lightgray;
+    color: white;
     font-size: 3rem;
   }
 
@@ -262,7 +262,7 @@ html, body, .container{
   .rightb {
     width: 100px;
     height: 50px;
-    float: left;
+    float: right;
     border-radius: 20px;
     margin: 68px 0 0 175px;
     background-image: url('http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png');
@@ -272,20 +272,24 @@ html, body, .container{
     outline: none;
   }
 
-
-  .buttonleft {
-    width: 450px;
-    height: 180px;
-    float: left;
-
-    select {
-      margin: 80px 0 0 180px;
-    }
+  select {
+    margin: 80px 0 0 180px;
   }
 
-  .buttonright {
-    width: 450px;
-    height: 180px;
-    float: left;
-  }
+
+  // .buttonleft {
+  //   width: 450px;
+  //   height: 180px;
+  //   float: left;
+  //
+  //   select {
+  //     margin: 80px 0 0 180px;
+  //   }
+  // }
+
+  // .buttonright {
+  //   width: 450px;
+  //   height: 180px;
+  //   float: left;
+  // }
 }
