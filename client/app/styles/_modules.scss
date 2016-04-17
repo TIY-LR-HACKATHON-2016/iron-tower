@@ -1,37 +1,31 @@
-.pizza {
+.mediumapartment {
   width: 900px;
   height: 180px;
   background-color: #457746;
   background-repeat: no-repeat;
   background-image: url('');
 
-  .imagep {
-    width: 900px;
-    height: 160px;
-    image-rendering: pixelated;
 
-  }
-
-  .pizzahead {
+  .mediumapartmenthead {
     width: 900px;
     height: 20px;
     background-color: #59895A;
     box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
   }
 
-  .pizzatitle {
+  .mediumapartmenttitle {
     margin: 2px 700px 0 0;
     float: right;
     color: white;
 
   }
 
-  .fa.fa-cutlery {
+  .fa.fa-building {
     margin: 0 0 0 5px;
     float: left;
   }
 
-  .imagep {
+  .imagemediumapartment {
     width: 900px;
     height: 160px;
     image-rendering: pixelated;
