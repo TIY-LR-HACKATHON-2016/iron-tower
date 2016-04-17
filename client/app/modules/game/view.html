@@ -77,6 +77,19 @@
 
             </div>
 
+            <div class="pizza" ng-if="floor.FloorName === 'Pizzaria'">
+
+              <div class="pizzahead">
+                 <i class="fa fa-cutlery" aria-hidden="true"></i>
+                <h5 class="pizzatitle"> Pizzaria </h5>
+
+                <img class="imagep" src="assets/images/Pizzaria.png"/>
+
+
+              </div>
+
+            </div>
+
 
         </div>
         <div class="floor" ng-repeat="floor in gameCtrl.floors"></div>
