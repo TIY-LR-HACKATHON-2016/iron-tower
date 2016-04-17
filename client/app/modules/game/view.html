@@ -44,7 +44,7 @@
 
             <div class="wholebuttondiv" ng-if="floor.FloorName === 'Empty Floor'">
 
-              <select ng-model="floor.pickedType">
+              <select ng-model="floor.pickedType" ng-click="alert('test')">
                 <option ng-repeat="possibleFloor in gameCtrl.possibleFloors" value="{{ possibleFloor.Id }}" ng-if="possibleFloor.Name != 'Empty Floor'">
                   {{possibleFloor.Name}}
                   - ${{possibleFloor.BuildCost}}
@@ -106,10 +106,13 @@
 
               <div class="burgerhead">
                 <i class="fa fa-briefcase" aria-hidden="true"></i>
-                <h5 class="burgertitle"> Burger Joint </h5>
+                <h5 class="burgertitle"> Burgers
+                </h5>
+
                 {{ floor.NumPeople }}
                 /
                 {{ floor.PeopleLimit }}
+
                 <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
 
               </div>

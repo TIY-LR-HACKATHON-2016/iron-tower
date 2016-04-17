@@ -21,8 +21,9 @@ class GameController {
 
   possibleFloors() {
     this._$http.get("http://irontower2016.azurewebsites.net/Games/PossibleFloors").then((response) => {
-      // console.log(response)
-      this.possibleFloors = response.data;
+      if (JSON.stringify(angular.copy(this.possibleFloors)) !== JSON.stringify(response.data)) {
+        this.possibleFloors = response.data;
+      }
     })
   }
 
@@ -89,13 +90,15 @@ class GameController {
     //       Work: "string",
     //       Name: "string"
     //     }
-
+console.log("getting game")
     this._$http
       .get("http://irontower2016.azurewebsites.net/")
       .then((response) => {
-        console.log(response);
-        let results = response.data;
-        this.game = results;
+        if (JSON.stringify(angular.copy(this.game)) !== JSON.stringify(response.data)) {
+          console.log("game changed");
+          let results = response.data;
+          this.game = results;
+        }
       })
 
 

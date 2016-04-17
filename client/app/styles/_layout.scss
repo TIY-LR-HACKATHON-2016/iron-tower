@@ -50,12 +50,15 @@ html, body, .container{
   margin: 0 auto;
   // background-color: gray;
   // box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
+
 }
 
 
 .floors {
-  height: 800px;
+  height: 740px;
   position: relative;
+  margin-top: 80px;
+
 }
 
 .floors .bottom-wrapper {
@@ -158,21 +161,26 @@ html, body, .container{
 
   h1 {
     color: #795D38;
-    text-shadow: 3px 3px 3px black;
+    text-shadow: 3px 3px 3px #FCDD61;
     font-family: 'Orbitron', sans-serif;
   }
 
   h2 {
-    color: #black;
-    // text-shadow: 3px 3px 3px black;
-    font-family: 'Rock Salt', cursive;
+    color: #795D38;
+    text-shadow: 3px 3px 3px #FCDD61;
+    font-family: 'Orbitron', sans-serif;
     font-size: 40px;
+
 
 
   }
 
   h3 {
     font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px #FCDD61;
+    color: #795D38;
+    margin-top: 0;
   }
 
 }
@@ -431,7 +439,6 @@ html, body, .container{
     height: 160px;
     image-rendering: pixelated;
   }
-
 
 
 }
