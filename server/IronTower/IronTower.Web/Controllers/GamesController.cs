@@ -124,7 +124,6 @@ namespace IronTower.Web.Controllers
                 return HttpNotFound("Can't find business");
             }
 
-
             var unemployedGuy = CurrentGame.People.FirstOrDefault(x => x.Work == null);
             if (unemployedGuy == null)
             {
@@ -132,6 +131,7 @@ namespace IronTower.Web.Controllers
             }
 
             unemployedGuy.Work = businessFloor;
+            businessFloor.People.Add(unemployedGuy);
 
             var moneyPerMinuteChange = businessFloor.FloorType.Earning;
 
@@ -141,6 +141,7 @@ namespace IronTower.Web.Controllers
                 moneyPerMinuteChange = businessFloor.FloorType.Earning*businessFloor.FloorType.EarningIncrease;
             }
 
+            CurrentGame.Unemployed--;
             CurrentGame.MoneyPerMin += moneyPerMinuteChange;
             db.SaveChanges();
 
