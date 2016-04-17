@@ -7,14 +7,14 @@ class GameController {
     // $interval(this.getData.bind(this), 10000);
     // $interval(this.possibleFloors.bind(this), 5000);
 
-    this.playerName = ""; // ng-model="gameCtrl.playerName"
+    this.playerName = "";
     // this.deletePlayer();
   }
 
   buyFloor() {
     this._$http.get("http://irontower2016.azurewebsites.net/Games/AddFloor").then((response) => {
       // console.log(response)
-      this.game = response.data[0];
+      this.game = response.data;
     })
   }
 
@@ -36,14 +36,14 @@ class GameController {
   deletePlayer() {
     this._$http.get("http://irontower2016.azurewebsites.net/Games/Delete")
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
   }
 
 
   changeFloor(floor) {
-    // console.log(floor);
-    this._$http.get(`http://irontower2016.azurewebsites.net/Games/ChangeFloor?Id=${floor.Id}&Type=${floor.pickedType}`)
+    console.log(floor);
+    this._$http.get(`http://irontower2016.azurewebsites.net/Games/ChangeFloor?floorid=${floor.FloorId}&floorTypeId=${floor.pickedType}`)
       .then((response) => {
         console.log(response);
       })
@@ -78,8 +78,8 @@ class GameController {
  this._$http
  .get("http://irontower2016.azurewebsites.net/")
  .then((response) => {
-  //  console.log(response);
-   let results = response.data[0];
+   console.log(response);
+   let results = response.data;
    this.game = results;
  })
 
