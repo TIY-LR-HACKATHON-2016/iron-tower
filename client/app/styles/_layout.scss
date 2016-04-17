@@ -349,31 +349,31 @@ html, body, .container{
 
 }
 
-.burger {
+.largeapartment {
   width: 900px;
   height: 180px;
 
 
-  .burgerhead {
+  .largeapartmenthead {
     width: 900px;
     height: 22px;
     background-color: #59895A;
     box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
   }
 
-  .burgertitle {
+  .largeapartmenttitle {
     margin: 5px 700px 0 0;
     float: right;
     color: white;
 
   }
 
-  .fa.fa-briefcase {
+  .fa.fa-building {
     margin: 5px 0 0 5px;
     float: left;
   }
 
-  .imageburger {
+  .imagelargeapartment {
     width: 900px;
     height: 160px;
     image-rendering: pixelated;
