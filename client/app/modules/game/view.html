@@ -56,17 +56,105 @@
               </div>
             </div>
 
-            <div class="business" ng-if="floor.FloorName === 'Cafe'">
+
+            <div class="business" ng-if="floor.FloorName === 'Empty'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Cafe </h5>
+                <h5 class="floortitle"> Empty </h5>
 
-                <img class="imageb" src=""/>
+                <img class="imageb" src="assets/images/Empty.png" />
 
 
               </div>
 
             </div>
+
+
+
+
+            <div class="business" ng-if="floor.FloorName === 'Cafe'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Cafe </h5>
+
+                {{ floor.NumPeople }} / {{ floor.PeopleLimit }}
+                <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
+                <img class="imageb" src="assets/images/Cafe.png" />
+
+
+              </div>
+
+            </div>
+
+
+            <div class="business" ng-if="floor.FloorName === 'Small Apartments'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Small Apartments </h5>
+
+                <img class="imageb" src="assets/images/SmallApartment.png" />
+
+
+              </div>
+
+            </div>
+
+
+            <div class="business" ng-if="floor.FloorName === 'Pizzaria'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Pizzaria </h5>
+
+                <img class="imageb" src="assets/images/Pizzaria.png" />
+
+
+              </div>
+
+            </div>
+
+
+            <div class="business" ng-if="floor.FloorName === 'Medium Apartments'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Medium Apartment </h5>
+
+                <img class="imageb" src="assets/images/MediumApartment.png" />
+
+
+              </div>
+
+            </div>
+
+
+            <div class="business" ng-if="floor.FloorName === 'Burger Joint'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Burger Joint </h5>
+
+                <img class="imageb" src="assets/images/BurgerJoint.png" />
+
+
+              </div>
+
+            </div>
+
+
+
+            <div class="business" ng-if="floor.FloorName === 'Large Apartments'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Large Apartments </h5>
+
+                <img class="imageb" src="assets/images/Cafe.png" />
+
+
+              </div>
+
+            </div>
+
+
+
+
 
             <!-- <div class="wholebuttondiv">
 
