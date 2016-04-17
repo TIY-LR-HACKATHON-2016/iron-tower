@@ -1,14 +1,8 @@
-
-
-
-
-
 <div class="city">
 
   <div class="container">
     <div id="cloud-intro"></div>
   </div>
-
 
   <div class="gameBox">
 
@@ -19,20 +13,27 @@
 
       </h1>
 
-      <h2> {{ gameCtrl.game.Name }} </h2>
+      <h2>
+        {{ gameCtrl.game.Name }}
+      </h2>
 
-      <h1> Coin/Min: </h1>
+      <h1>
+        Coin/Min:
+      </h1>
 
-      <h3> {{ gameCtrl.game.MoneyPerMin }} </h3>
+      <h3>
+        {{ gameCtrl.game.MoneyPerMin }}
+      </h3>
 
     </div>
-
 
     <div class="tower">
 
       <a class="buy" ng-click="gameCtrl.buyFloor()">
         <div class="buy">
-          <h5> Buy Floor </h5>
+          <h5>
+            Buy Floor
+          </h5>
         </div>
       </a>
 
@@ -43,165 +44,156 @@
 
             <div class="wholebuttondiv" ng-if="floor.FloorName === 'Empty Floor'">
 
+              <select ng-model="floor.pickedType">
+                <option ng-repeat="possibleFloor in gameCtrl.possibleFloors" value="{{ possibleFloor.Id }}" ng-if="possibleFloor.Name != 'Empty Floor'">
+                  {{possibleFloor.Name}}
+                  - ${{possibleFloor.BuildCost}}
+                </option>
+              </select>
 
-                <select ng-model="floor.pickedType">
-                  <option ng-repeat="possibleFloor in gameCtrl.possibleFloors" value="{{ possibleFloor.Id }}" ng-if="possibleFloor.Name != 'Empty Floor'">
-                    {{possibleFloor.Name}} - ${{possibleFloor.BuildCost}}
-                  </option>
-                </select>
-
-                <input class="rightb" type="submit" value="Buy" ng-click="gameCtrl.changeFloor(floor)">
-
+              <input class="rightb" type="submit" value="Buy" ng-click="gameCtrl.changeFloor(floor)">
 
             </div>
-
 
             <div class="business" ng-if="floor.FloorName === 'Empty'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Empty </h5>
+                <h5 class="floortitle">
+                  Empty
+                </h5>
 
-                <img class="imageb" src="assets/images/Empty.png" />
-
+                <img class="imageb" src="assets/images/Empty.png"/>
 
               </div>
 
             </div>
-
-
-
 
             <div class="business" ng-if="floor.FloorName === 'Cafe'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Cafe </h5>
+                <h5 class="floortitle">
+                  Cafe
+                </h5>
 
-                {{ floor.NumPeople }} / {{ floor.PeopleLimit }}
+                {{ floor.NumPeople }}
+                /
+                {{ floor.PeopleLimit }}
                 <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
-                <img class="imageb" src="assets/images/Cafe.png" />
-
+                <img class="imageb" src="assets/images/Cafe.png"/>
 
               </div>
 
             </div>
-
 
             <div class="business" ng-if="floor.FloorName === 'Small Apartments'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Small Apartments </h5>
+                <h5 class="floortitle">
+                  Small Apartments
+                </h5>
 
-                <img class="imageb" src="assets/images/SmallApartment.png" />
-
+                <img class="imageb" src="assets/images/SmallApartment.png"/>
 
               </div>
 
             </div>
-
 
             <div class="business" ng-if="floor.FloorName === 'Pizzaria'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Pizzaria </h5>
+                <h5 class="floortitle">
+                  Pizzaria
+                </h5>
 
-                <img class="imageb" src="assets/images/Pizzaria.png" />
-
+                <img class="imageb" src="assets/images/Pizzaria.png"/>
 
               </div>
 
             </div>
-
 
             <div class="business" ng-if="floor.FloorName === 'Medium Apartments'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Medium Apartment </h5>
+                <h5 class="floortitle">
+                  Medium Apartment
+                </h5>
 
-                <img class="imageb" src="assets/images/MediumApartment.png" />
-
+                <img class="imageb" src="assets/images/MediumApartment.png"/>
 
               </div>
 
             </div>
-
 
             <div class="business" ng-if="floor.FloorName === 'Burger Joint'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Burger Joint </h5>
+                <h5 class="floortitle">
+                  Burger Joint
+                </h5>
 
-                <img class="imageb" src="assets/images/BurgerJoint.png" />
-
+                <img class="imageb" src="assets/images/BurgerJoint.png"/>
 
               </div>
 
             </div>
-
-
 
             <div class="business" ng-if="floor.FloorName === 'Large Apartments'">
               <i class="fa fa-briefcase" aria-hidden="true"></i>
               <div class="businesshead">
-                <h5 class="floortitle"> Large Apartments </h5>
+                <h5 class="floortitle">
+                  Large Apartments
+                </h5>
 
-                <img class="imageb" src="assets/images/Cafe.png" />
-
+                <img class="imageb" src="assets/images/Cafe.png"/>
 
               </div>
-
-            </div>
-
-
-
-
-
-            <!-- <div class="wholebuttondiv">
-
-              <img class="apimage" src="http://oi68.tinypic.com/121tmkx.jpg"/>
 
             </div>
 
             <div class="pizza" ng-if="floor.FloorName === 'Pizzaria'">
 
               <div class="pizzahead">
-                 <i class="fa fa-cutlery" aria-hidden="true"></i>
-                <h5 class="pizzatitle"> Pizzaria </h5>
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+                <h5 class="pizzatitle">
+                  Pizzaria
+                </h5>
 
                 <img class="imagep" src="assets/images/Pizzaria.png"/>
 
-
               </div>
 
             </div>
 
-            <div class="mediumapartment" ng-if="floor.FloorName === 'MediumApartment'">
+            <div class="mediumapartment" ng-if="floor.FloorName === 'Medium Apartments'">
 
               <div class="mediumapartmenthead">
-                 <i class="fa fa-building" aria-hidden="true"></i>
-                <h5 class="mediumapartmenttitle"> Medium Apartment </h5>
+                <i class="fa fa-building" aria-hidden="true"></i>
+                <h5 class="mediumapartmenttitle">
+                  Medium Apartment
+                </h5>
 
                 <img class="imagemediumapartment" src="assets/images/Pizzaria.png"/>
 
-
               </div>
 
             </div>
 
-
+          </div>
         </div>
-        <div class="floor" ng-repeat="floor in gameCtrl.floors"></div>
-      </div>
 
+      </div>
     </div>
   </div>
 </div>
 
-
 <div class="footer">
   <img class="footercoin" src="http://hydra-media.cursecdn.com/crafttheworld.gamepedia.com/thumb/6/6d/Coin.png/50px-Coin.png?version=ea00541e8b483ddfd83045745a11ce8a"/>
-  <p class="gamemoney"> {{ gameCtrl.game.Money }} </p>
+  <p class="gamemoney">
+    {{ gameCtrl.game.Money }}
+  </p>
   <i class="fa fa-male" aria-hidden="true"></i>
-  <p class="unemployed"> {{ gameCtrl.game.Unemployed }} </p>
-
+  <p class="unemployed">
+    {{ gameCtrl.game.Unemployed }}
+  </p>
 
 </div>
