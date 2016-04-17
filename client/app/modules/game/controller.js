@@ -25,7 +25,7 @@ class GameController {
     })
   }
 
-  playerName() {
+  setPlayerName() {
     this._$http.post("http://irontower2016.azurewebsites.net/Games/PlayerName", {
       Name: this.playerName
     }).then((response) => {

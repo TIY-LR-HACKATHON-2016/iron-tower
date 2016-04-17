@@ -48,9 +48,10 @@ html, body, .container{
   height: 850px;
   width: 900px;
   margin: 0 auto;
-  background-color: gray;
-  box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
+  // background-color: gray;
+  // box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
 }
+
 
 .floors {
   height: 800px;
@@ -58,11 +59,11 @@ html, body, .container{
 }
 
 .floors .bottom-wrapper {
-  padding-bottom: 205px;
+  // padding-bottom: 205px;
   overflow: auto;
   position: absolute;
   max-height: 100%;
-  bottom: 0;
+  bottom: 80px;
   left: 0;
 }
 
@@ -121,7 +122,7 @@ html, body, .container{
 .buy {
   width: 100%;
   height: 50px;
-  background-color: black;
+  background-color: gray;
 
   .buy:hover {
     background-color: lightgray;
@@ -256,11 +257,11 @@ html, body, .container{
     outline: none;
   }
 
+
   .buttonleft {
     width: 450px;
     height: 180px;
     float: left;
-
   }
 
   .buttonright {
