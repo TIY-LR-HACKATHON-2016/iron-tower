@@ -40,7 +40,7 @@
 
           <div ng-repeat="floor in gameCtrl.game.Tower">
 
-            <div class="wholebuttondiv" ng-if="floor.FloorType === null">
+            <div class="wholebuttondiv" ng-if="floor.FloorName === 'Empty Floor'">
 
               <div class="buttonleft">
                 <select ng-model="floor.pickedType">
@@ -54,6 +54,18 @@
                 <input class="rightb" type="submit" value="Buy" ng-click="gameCtrl.changeFloor(floor)">
 
               </div>
+            </div>
+
+            <div class="business" ng-if="floor.FloorName === 'Cafe'">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <div class="businesshead">
+                <h5 class="floortitle"> Cafe </h5>
+
+                <img class="imageb" src=""/>
+
+
+              </div>
+
             </div>
 
             <!-- <div class="wholebuttondiv">
