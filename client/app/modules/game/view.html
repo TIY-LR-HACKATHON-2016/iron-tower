@@ -39,18 +39,16 @@
       <div class="floors">
         <div class="bottom-wrapper">
 
-          <div ng-repeat="floor in gameCtrl.game.Tower">
+          <div ng-repeat="floor in gameCtrl.game.Tower|orderBy: '-FloorId'">
 
             <div class="wholebuttondiv" ng-if="floor.FloorName === 'Empty Floor'">
 
-              
+
                 <select ng-model="floor.pickedType">
                   <option ng-repeat="possibleFloor in gameCtrl.possibleFloors" value="{{ possibleFloor.Id }}" ng-if="possibleFloor.Name != 'Empty Floor'">
                     {{possibleFloor.Name}} - ${{possibleFloor.BuildCost}}
                   </option>
                 </select>
-
-
 
                 <input class="rightb" type="submit" value="Buy" ng-click="gameCtrl.changeFloor(floor)">
 
@@ -69,7 +67,7 @@
 
             </div>
 
-            <div class="apartment" ng-if="Floor.Name === 'SmallApartment'">
+            <div class="apartment" ng-if="floor.FloorName === 'Small Apartments'">
               <div class="apartmenthead">
                 <i class="fa fa-building" aria-hidden="true"></i>
                 <h5 class="floortitle"> Apartments </h5>

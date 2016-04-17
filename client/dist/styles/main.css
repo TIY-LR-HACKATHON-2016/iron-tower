@@ -44,10 +44,10 @@ html, body, .container {
   position: relative; }
 
 .floors .bottom-wrapper {
-  overflow: auto;
+  overflow-y: scroll;
   position: absolute;
   max-height: 100%;
-  bottom: 80px;
+  bottom: 116px;
   left: 0; }
 
 .city {
@@ -169,7 +169,9 @@ html, body, .container {
 .wholebuttondiv {
   width: 900px;
   height: 180px;
-  background-color: lightgray; }
+  background-image: url("../assets/images/Empty.png");
+  background-size: cover;
+  image-rendering: pixelated; }
   .wholebuttondiv .leftb {
     width: 100px;
     height: 50px;
@@ -187,11 +189,15 @@ html, body, .container {
     height: 50px;
     float: right;
     border-radius: 20px;
-    margin: 68px 0 0 175px;
+    margin: 55px 160px 0 0;
     background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
     color: red;
     font-size: 20px;
     font-family: cursive;
     outline: none; }
   .wholebuttondiv select {
-    margin: 80px 0 0 180px; }
+    margin: 70px 0 0 180px; }
+  .wholebuttondiv .imageempty {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
