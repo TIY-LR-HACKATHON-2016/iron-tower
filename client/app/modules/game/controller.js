@@ -4,8 +4,8 @@ class GameController {
     this.$stateParams = $stateParams;
     this.getData();
     this.possibleFloors();
-    // $interval(this.getData.bind(this), 10000);
-    // $interval(this.possibleFloors.bind(this), 5000);
+    $interval(this.getData.bind(this), 10000);
+    $interval(this.possibleFloors.bind(this), 5000);
 
     this.playerName = "";
     // this.deletePlayer();
