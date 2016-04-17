@@ -87,7 +87,7 @@
 
 
             <div class="business" ng-if="floor.FloorName === 'Small Apartments'">
-              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <i class="fa fa-building" aria-hidden="true"></i>
               <div class="businesshead">
                 <h5 class="floortitle"> Small Apartments </h5>
 
@@ -112,28 +112,19 @@
             </div>
 
 
-            <div class="business" ng-if="floor.FloorName === 'Medium Apartments'">
-              <i class="fa fa-briefcase" aria-hidden="true"></i>
-              <div class="businesshead">
-                <h5 class="floortitle"> Medium Apartment </h5>
-
-                <img class="imageb" src="assets/images/MediumApartment.png" />
 
 
-              </div>
 
-            </div>
+            <div class="burger" ng-if="floor.FloorName === 'Burger Joint'">
 
-
-            <div class="business" ng-if="floor.FloorName === 'Burger Joint'">
-              <i class="fa fa-briefcase" aria-hidden="true"></i>
-              <div class="businesshead">
-                <h5 class="floortitle"> Burger Joint </h5>
-
-                <img class="imageb" src="assets/images/BurgerJoint.png" />
-
+              <div class="burgerhead">
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                <h5 class="burgertitle"> Burger Joint </h5>
 
               </div>
+
+              <img class="imageburger" src="assets/images/BurgerJoint.png" />
+
 
             </div>
 
@@ -164,7 +155,8 @@
 
             </div>
 
-            <div class="mediumapartment" ng-if="floor.FloorName === 'Medium Apartment'">
+
+            <div class="mediumapartment" ng-if="floor.FloorName === 'Medium Apartments'">
 
               <div class="mediumapartmenthead">
                  <i class="fa fa-building" aria-hidden="true"></i>

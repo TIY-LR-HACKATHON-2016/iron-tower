@@ -317,6 +317,70 @@ html, body, .container{
 
 }
 
+.burger {
+  width: 900px;
+  height: 180px;
+
+
+  .burgerhead {
+    width: 900px;
+    height: 22px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
+  }
+
+  .burgertitle {
+    margin: 5px 700px 0 0;
+    float: right;
+    color: white;
+
+  }
+
+  .fa.fa-briefcase {
+    margin: 5px 0 0 5px;
+    float: left;
+  }
+
+  .imageburger {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
+  }
+
+}
+
+.burger {
+  width: 900px;
+  height: 180px;
+
+
+  .burgerhead {
+    width: 900px;
+    height: 22px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
+  }
+
+  .burgertitle {
+    margin: 5px 700px 0 0;
+    float: right;
+    color: white;
+
+  }
+
+  .fa.fa-briefcase {
+    margin: 5px 0 0 5px;
+    float: left;
+  }
+
+  .imageburger {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
+  }
+
+}
+
 
 .wholebuttondiv {
   width: 900px;
