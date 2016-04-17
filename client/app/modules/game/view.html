@@ -30,30 +30,29 @@
 
     <div class="tower">
 
-      <a class="buy" href="" ng-click="gameCtrl.buyFloor()">
+      <a class="buy" ng-click="gameCtrl.buyFloor()">
         <div class="buy">
+          <h5> Buy Floor </h5>
         </div>
       </a>
 
       <div class="floors">
         <div class="bottom-wrapper">
 
-          <div ng-repeat="floor in gameCtrl.game.Tower">
+          <div ng-repeat="floor in gameCtrl.game.Tower|orderBy: '-FloorId'">
 
             <div class="wholebuttondiv" ng-if="floor.FloorName === 'Empty Floor'">
 
-              <div class="buttonleft">
+
                 <select ng-model="floor.pickedType">
                   <option ng-repeat="possibleFloor in gameCtrl.possibleFloors" value="{{ possibleFloor.Id }}" ng-if="possibleFloor.Name != 'Empty Floor'">
                     {{possibleFloor.Name}} - ${{possibleFloor.BuildCost}}
                   </option>
-                 </select>
-              </div>
+                </select>
 
-              <div class="buttonright">
                 <input class="rightb" type="submit" value="Buy" ng-click="gameCtrl.changeFloor(floor)">
 
-              </div>
+
             </div>
 
 
@@ -158,53 +157,36 @@
 
             <!-- <div class="wholebuttondiv">
 
-              <div class="buttonleft">
-              <select>
-                <option ng-repeat="floor in gameCtrl.possibleFloors" value="{{floor.FloorType}}" ng-if="floor.Name != 'Empty Floor'">
-                    {{floor.Name}} - ${{floor.BuildCost}}
+              <img class="apimage" src="http://oi68.tinypic.com/121tmkx.jpg"/>
 
-                </option>
+            </div>
 
-               </select>
+            <div class="pizza" ng-if="floor.FloorName === 'Pizzaria'">
+
+              <div class="pizzahead">
+                 <i class="fa fa-cutlery" aria-hidden="true"></i>
+                <h5 class="pizzatitle"> Pizzaria </h5>
+
+                <img class="imagep" src="assets/images/Pizzaria.png"/>
 
 
               </div>
 
-              <div class="buttonright">
-                <input class="rightb" type="submit" value="Buy" ng-click="">
+            </div>
+
+            <div class="mediumapartment" ng-if="floor.FloorName === 'MediumApartment'">
+
+              <div class="mediumapartmenthead">
+                 <i class="fa fa-building" aria-hidden="true"></i>
+                <h5 class="mediumapartmenttitle"> Medium Apartment </h5>
+
+                <img class="imagemediumapartment" src="assets/images/Pizzaria.png"/>
+
 
               </div>
 
             </div>
 
-          <div class="apartment">
-            <div class="apartmenthead">
-              <i class="fa fa-building" aria-hidden="true"></i>
-              <h5 class="floortitle"> Apartments </h5>
-            </div>
-
-            <img class="apimage" src="http://oi68.tinypic.com/121tmkx.jpg"/>
-
-            <div class="door">
-              <i class="fa fa-circle" aria-hidden="true"></i>
-
-            </div>
-
-
-            <i class="fa fa-bed" aria-hidden="true"></i>
-          </div>
-
-          <div class="business">
-            <i class="fa fa-briefcase" aria-hidden="true"></i>
-            <div class="businesshead">
-              <h5 class="floortitle"> Business </h5>
-
-              <img class="imageb" src=""/>
-
-
-            </div>
-
-          </div> -->
 
         </div>
         <div class="floor" ng-repeat="floor in gameCtrl.floors"></div>

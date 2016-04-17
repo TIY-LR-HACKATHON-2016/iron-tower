@@ -60,10 +60,10 @@ html, body, .container{
 
 .floors .bottom-wrapper {
   // padding-bottom: 205px;
-  overflow: auto;
+  overflow-y: scroll;
   position: absolute;
   max-height: 100%;
-  bottom: 180px;
+  bottom: 116px;
   left: 0;
 }
 
@@ -121,8 +121,23 @@ html, body, .container{
 
 .buy {
   width: 100%;
-  height: 50px;
+  height: 60px;
   background-color: gray;
+  border-radius: 10px;
+  box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
+  h5 {
+    height: 60px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+  }
+
+  h5:hover {
+    color: #808080;
+
+  }
 
   .buy:hover {
     background-color: lightgray;
@@ -222,11 +237,56 @@ html, body, .container{
   }
 }
 
+.pizza {
+  width: 900px;
+  height: 180px;
+  background-color: #457746;
+  background-repeat: no-repeat;
+  background-image: url('');
+
+  .imagep {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
+
+  }
+
+  .pizzahead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0,0,0,0.75);
+  }
+
+  .pizzatitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white;
+
+  }
+
+  .fa.fa-cutlery {
+    margin: 0 0 0 5px;
+    float: left;
+  }
+
+  .imagep {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
+  }
+
+}
+
 
 .wholebuttondiv {
   width: 900px;
   height: 180px;
-  background-color: lightgray;
+  // background-color: lightgray;
+
+  background-image: url('../assets/images/Empty.png');
+  background-size: cover;
+  image-rendering: pixelated;
 
 
   .leftb {
@@ -247,9 +307,9 @@ html, body, .container{
   .rightb {
     width: 100px;
     height: 50px;
-    float: left;
+    float: right;
     border-radius: 20px;
-    margin: 68px 0 0 175px;
+    margin: 55px 160px 0 0;
     background-image: url('http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png');
     color: red;
     font-size: 20px;
@@ -257,20 +317,16 @@ html, body, .container{
     outline: none;
   }
 
-
-  .buttonleft {
-    width: 450px;
-    height: 180px;
-    float: left;
-
-    select {
-      margin: 80px 0 0 180px;
-    }
+  select {
+    margin: 70px 0 0 180px;
   }
 
-  .buttonright {
-    width: 450px;
-    height: 180px;
-    float: left;
+  .imageempty {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated;
   }
+
+
+
 }
