@@ -30,6 +30,64 @@ namespace IronTower.Web.Controllers
         {
             CurrentGame.Name = name ?? "Player";
 
+            switch (CurrentGame.Name.ToLower())
+            {
+                case "nancy":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "nick":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "james":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "kate":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "brian":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "seth":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "trey":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "t":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "kevin":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "john":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "john b":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "john k":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "shaun":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "zach":
+                    CurrentGame.Money = -12000;
+                    break;
+                case "daniel":
+                    CurrentGame.Money = 1000000;
+                    break;
+                case "jonathan":
+                    CurrentGame.Money = 1000000;
+                    break;
+                case "mary":
+                    CurrentGame.Money = 500000;
+                    break;
+                case "sinovia":
+                    CurrentGame.Money = 500000;
+                    break;
+            }
+
             db.SaveChanges();
         }
 
