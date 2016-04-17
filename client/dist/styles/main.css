@@ -170,10 +170,7 @@ html, body, .container {
 
 .pizza {
   width: 900px;
-  height: 180px;
-  background-color: #457746;
-  background-repeat: no-repeat;
-  background-image: url(""); }
+  height: 180px; }
   .pizza .imagep {
     width: 900px;
     height: 160px;
@@ -188,7 +185,7 @@ html, body, .container {
     float: right;
     color: white; }
   .pizza .fa.fa-cutlery {
-    margin: 0 0 0 5px;
+    margin: 0 5px 0 5px;
     float: left; }
   .pizza .imagep {
     width: 900px;
@@ -237,6 +234,9 @@ html, body, .container {
     width: 900px;
     height: 160px;
     image-rendering: pixelated; }
+  .burger .burgerbutton {
+    float: left;
+    margin: -10px 0 0 20px; }
 
 .largeapartment {
   width: 900px;

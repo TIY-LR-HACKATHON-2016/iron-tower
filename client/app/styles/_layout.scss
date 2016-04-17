@@ -244,9 +244,6 @@ html, body, .container{
 .pizza {
   width: 900px;
   height: 180px;
-  background-color: #457746;
-  background-repeat: no-repeat;
-  background-image: url('');
 
   .imagep {
     width: 900px;
@@ -270,7 +267,7 @@ html, body, .container{
   }
 
   .fa.fa-cutlery {
-    margin: 0 0 0 5px;
+    margin: 0 5px 0 5px;
     float: left;
   }
 
@@ -345,6 +342,11 @@ html, body, .container{
     width: 900px;
     height: 160px;
     image-rendering: pixelated;
+  }
+
+  .burgerbutton {
+    float: left;
+    margin: -10px 0 0 20px;
   }
 
 }

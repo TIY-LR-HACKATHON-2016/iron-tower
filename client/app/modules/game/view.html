@@ -78,16 +78,18 @@
                 {{ floor.NumPeople }}
                 /
                 {{ floor.PeopleLimit }}
-                <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
-                <img class="imageb" src="assets/images/Cafe.png"/>
+                <button class="burgerbutton" ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
+
 
               </div>
+              <img class="imageb" src="assets/images/Cafe.png"/>
 
             </div>
 
             <div class="business" ng-if="floor.FloorName === 'Small Apartments'">
-              <i class="fa fa-building" aria-hidden="true"></i>
+
               <div class="businesshead">
+                <i class="fa fa-building" aria-hidden="true"></i>
                 <h5 class="floortitle">
                   Small Apartments
                 </h5>
@@ -98,25 +100,6 @@
 
             </div>
 
-            <div class="business" ng-if="floor.FloorName === 'Pizzaria'">
-              <i class="fa fa-briefcase" aria-hidden="true"></i>
-              <div class="businesshead">
-                <h5 class="floortitle">
-                  Pizzaria
-                </h5>
-
-                {{ floor.NumPeople }}
-                /
-                {{ floor.PeopleLimit }}
-                <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
-                <img class="imageb" src="assets/images/Pizzaria.png"/>
-
-              </div>
-
-            </div>
-
-
-
 
 
             <div class="burger" ng-if="floor.FloorName === 'Burger Joint'">
@@ -124,6 +107,10 @@
               <div class="burgerhead">
                 <i class="fa fa-briefcase" aria-hidden="true"></i>
                 <h5 class="burgertitle"> Burger Joint </h5>
+                {{ floor.NumPeople }}
+                /
+                {{ floor.PeopleLimit }}
+                <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
 
               </div>
 
