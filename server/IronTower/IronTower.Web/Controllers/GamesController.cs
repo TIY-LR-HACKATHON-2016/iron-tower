@@ -107,8 +107,9 @@ namespace IronTower.Web.Controllers
 
             CurrentGame.Tower.Add(f);
 
+            var halfFloorCost = CurrentGame.NextFloorCost/CurrentGame.NextFloorCostIncrease;
             CurrentGame.Money -= CurrentGame.NextFloorCost;
-            CurrentGame.NextFloorCost *= CurrentGame.NextFloorCostIncrease;
+            CurrentGame.NextFloorCost += halfFloorCost;
 
             db.SaveChanges();
             return JsonGame();
@@ -118,7 +119,7 @@ namespace IronTower.Web.Controllers
         public ActionResult AddEmployee(int id)
         {
 
-            var businessFloor = CurrentGame.Tower.FirstOrDefault(x => x.Id == id);
+            var businessFloor = CurrentGame.Tower.FirstOrDefault(x => x.Id == id && x.NumPeople < x.FloorType.PeopleLimit);
             if (businessFloor == null)
             {
                 return HttpNotFound("Can't find business");
