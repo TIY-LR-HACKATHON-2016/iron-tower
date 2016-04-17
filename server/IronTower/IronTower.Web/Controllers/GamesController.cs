@@ -77,7 +77,7 @@ namespace IronTower.Web.Controllers
                 CurrentGame.MoneyPerMin,
                 CurrentGame.NextFloorCost,
                 CurrentGame.Unemployed,
-                Tower = CurrentGame.Tower.Select(x => new { FloorId = x.Id, FloorName = x.FloorType.Name, FloorTypeId = x.FloorType.Id }).ToList()
+                Tower = CurrentGame.Tower.Select(x => new { FloorId = x.Id, FloorName = x.FloorType.Name, FloorTypeId = x.FloorType.Id, x.FloorType.PeopleLimit, x.NumPeople}).ToList()
             };
             return Json(model, JsonRequestBehavior.AllowGet);
         }
