@@ -36,7 +36,7 @@ namespace IronTower.Web.Models
         [NotMapped]
         public int NumPeople => this.People.Count;
 
-        public FloorType FloorType { get; set; }
+        public virtual FloorType FloorType { get; set; }
 
         [Required]
         public Game Game { get; set; }

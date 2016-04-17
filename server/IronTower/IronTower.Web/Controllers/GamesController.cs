@@ -60,6 +60,7 @@ namespace IronTower.Web.Controllers
                 {
                     floor.People.Add(new Person { Game = CurrentGame, Home = floor });
                     CurrentGame.LastTenant = DateTime.Now;
+                    CurrentGame.Unemployed++;
                     CurrentGame.Message = "New Tenant has arrived!";
                     CurrentGame.MessageType = 1;
                 }
@@ -70,14 +71,16 @@ namespace IronTower.Web.Controllers
 
         private ActionResult JsonGame()
         {
+            
             var model = new
             {
                 CurrentGame.Id,
+                CurrentGame.Name,
                 CurrentGame.Money,
                 CurrentGame.MoneyPerMin,
                 CurrentGame.NextFloorCost,
-                PeopleCount = CurrentGame.People.Count(),
-                Tower = CurrentGame.Tower.Select(x=> new { FloorId = x.Id, FloorTypeId = x.FloorType.Id})
+                CurrentGame.Unemployed,
+                Tower = CurrentGame.Tower.Select(x => new {FloorId = x.Id, FloorName = x.FloorType.Name, FloorTypeId = x.FloorType.Id}).ToList()
             };
             return Json(model, JsonRequestBehavior.AllowGet);
         }
