@@ -8,7 +8,8 @@ class GameController {
     $interval(this.possibleFloors.bind(this), 5000);
 
     this.playerName = "";
-    // this.deletePlayer();
+    this.deletePlayer();
+
   }
 
   buyFloor() {
@@ -48,6 +49,16 @@ class GameController {
         console.log(response);
       })
   }
+
+
+  addPeople(floor) {
+    console.log(floor);
+    this._$http.get(`http://irontower2016.azurewebsites.net/Games/AddEmployee?id=${floor.FloorId}`)
+      .then((response) => {
+        console.log(response);
+      })
+  }
+
 
   getData() {
   //   this.game = {
