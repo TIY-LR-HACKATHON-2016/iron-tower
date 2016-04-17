@@ -8,7 +8,7 @@ class GameController {
     $interval(this.possibleFloors.bind(this), 5000);
 
     this.playerName = "";
-    this.deletePlayer();
+    // this.deletePlayer();
 
   }
 
@@ -27,18 +27,22 @@ class GameController {
   }
 
   setPlayerName() {
-    this._$http.post("http://irontower2016.azurewebsites.net/Games/PlayerName", {
-      Name: this.playerName
-    }).then((response) => {
-      this.game.Name = this.playerName;
-    });
+    this.deletePlayer()
+      .then((response) => {
+        this._$http.post("http://irontower2016.azurewebsites.net/Games/PlayerName", {
+          Name: this.playerName
+        }).then((response) => {
+          this.game.Name = this.playerName;
+
+        });
+      })
+
   }
 
   deletePlayer() {
-    this._$http.get("http://irontower2016.azurewebsites.net/Games/Delete")
-      .then((response) => {
-        // console.log(response);
-      })
+    return this._$http.get("http://irontower2016.azurewebsites.net/Games/Delete")
+
+
   }
 
 
@@ -61,44 +65,42 @@ class GameController {
 
 
   getData() {
-  //   this.game = {
-  //     Name: "Nick",
-  //     Money: 600,
-  //     MoneyPerMin: 60,
-  //     Unemployed: 3,
-  //     Message: "You have 2 new people",
-  //     MesssageType: "",
-  //     Tower: [],
-  //     NextFloorCost: 1000,
-  //     People: []
-  //     }
-  //
-  //     this.floor = {
-  //       PeopleLimit: 4,
-  //       NumPeople: 5,
-  //       FloorType: "",
-  //       People: []
-  //     }
-  //
-  //     this.person = {
-  //       Home: "string",
-  //       Work: "string",
-  //       Name: "string"
-  //     }
+    //   this.game = {
+    //     Name: "Nick",
+    //     Money: 600,
+    //     MoneyPerMin: 60,
+    //     Unemployed: 3,
+    //     Message: "You have 2 new people",
+    //     MesssageType: "",
+    //     Tower: [],
+    //     NextFloorCost: 1000,
+    //     People: []
+    //     }
+    //
+    //     this.floor = {
+    //       PeopleLimit: 4,
+    //       NumPeople: 5,
+    //       FloorType: "",
+    //       People: []
+    //     }
+    //
+    //     this.person = {
+    //       Home: "string",
+    //       Work: "string",
+    //       Name: "string"
+    //     }
 
- this._$http
- .get("http://irontower2016.azurewebsites.net/")
- .then((response) => {
-   console.log(response);
-   let results = response.data;
-   this.game = results;
- })
+    this._$http
+      .get("http://irontower2016.azurewebsites.net/")
+      .then((response) => {
+        console.log(response);
+        let results = response.data;
+        this.game = results;
+      })
 
 
   }
 }
-
-
 
 
 
