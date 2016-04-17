@@ -124,7 +124,10 @@
               <div class="burgerhead">
                 <i class="fa fa-briefcase" aria-hidden="true"></i>
                 <h5 class="burgertitle"> Burger Joint </h5>
-
+                {{ floor.NumPeople }}
+                /
+                {{ floor.PeopleLimit }}
+                <button ng-click="gameCtrl.addPeople(floor)">Add Employee</button>
               </div>
 
               <img class="imageburger" src="assets/images/BurgerJoint.png" />
