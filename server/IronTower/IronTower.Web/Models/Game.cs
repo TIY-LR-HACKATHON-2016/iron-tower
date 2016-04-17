@@ -25,7 +25,7 @@ namespace IronTower.Web.Models
         }
 
         //game balance
-        public int TennantInterval { get; set; } = 2; //seconds
+        public int TennantInterval { get; set; } = 10; //seconds
         public int FirstFloorCost => 600; //starting
 
         public virtual ICollection<Person> People { get; set; } = new List<Person>();
