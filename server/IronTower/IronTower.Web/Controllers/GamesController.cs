@@ -36,9 +36,6 @@ namespace IronTower.Web.Controllers
         // GET: Games
         public ActionResult GameState()
         {
-
-
-
             //initialize each game state
             CurrentGame.Message = "";
             CurrentGame.MessageType = 0;
@@ -71,7 +68,7 @@ namespace IronTower.Web.Controllers
 
         private ActionResult JsonGame()
         {
-            
+
             var model = new
             {
                 CurrentGame.Id,
@@ -80,7 +77,7 @@ namespace IronTower.Web.Controllers
                 CurrentGame.MoneyPerMin,
                 CurrentGame.NextFloorCost,
                 CurrentGame.Unemployed,
-                Tower = CurrentGame.Tower.Select(x => new {FloorId = x.Id, FloorName = x.FloorType.Name, FloorTypeId = x.FloorType.Id}).ToList()
+                Tower = CurrentGame.Tower.Select(x => new { FloorId = x.Id, FloorName = x.FloorType.Name, FloorTypeId = x.FloorType.Id }).ToList()
             };
             return Json(model, JsonRequestBehavior.AllowGet);
         }
@@ -136,6 +133,15 @@ namespace IronTower.Web.Controllers
 
             unemployedGuy.Work = businessFloor;
 
+            var moneyPerMinuteChange = businessFloor.FloorType.Earning;
+
+            if (businessFloor.NumPeople > 1)
+            {
+                CurrentGame.Money -= businessFloor.FloorType.Earning;
+                moneyPerMinuteChange = businessFloor.FloorType.Earning*businessFloor.FloorType.EarningIncrease;
+            }
+
+            CurrentGame.MoneyPerMin += moneyPerMinuteChange;
             db.SaveChanges();
 
             return JsonGame();
