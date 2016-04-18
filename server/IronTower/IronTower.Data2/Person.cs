@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace IronTower.Web.Models
+namespace IronTower.Data2
 {
     public class Person
     {

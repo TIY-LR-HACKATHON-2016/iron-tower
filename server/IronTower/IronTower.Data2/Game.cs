@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace IronTower.Web.Models
+namespace IronTower.Data2
 {
     public class Game
     {

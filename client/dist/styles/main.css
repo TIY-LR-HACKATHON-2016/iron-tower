@@ -1,0 +1,344 @@
+body {
+  height: 100%;
+  margin: 0; }
+
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.city .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; }
+
+.city .gameBox {
+  position: relative;
+  z-index: 3; }
+
+#cloud-intro {
+  position: relative;
+  height: 100%;
+  background: url(http://static.radulescu.me/examples/clouds/clouds1000.png);
+  background: url(http://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px, url(http://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px, url(http://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;
+  animation: wind 20s linear infinite; }
+
+@keyframes wind {
+  0% {
+    background-position: 0 200px, 0 300px, 100px 250px; }
+  100% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px; } }
+
+.tower {
+  height: 850px;
+  width: 900px;
+  margin: 0 auto; }
+
+.floors {
+  height: 680px;
+  position: relative;
+  margin-top: 140px; }
+
+.floors .bottom-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  max-height: 100%;
+  bottom: 116px;
+  left: 0; }
+
+.city {
+  width: 100%;
+  height: 900px;
+  background-image: url("https://i.ytimg.com/vi/W5kz6QNFKs0/maxresdefault.jpg");
+  background-repeat: no-repeat;
+  position: relative; }
+
+.floor {
+  width: 800px;
+  background-color: black; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #795D38;
+  box-shadow: 0px 0px 100px -20px rgba(0, 0, 0, 0.75);
+  z-index: 4; }
+  .footer .footercoin {
+    border-radius: 50%;
+    margin: 14px 0 0 20px;
+    float: left; }
+  .footer .gamemoney {
+    float: left;
+    margin: 26px 0 0 20px;
+    font-size: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #FCDD61;
+    text-shadow: 3px 3px 3px black; }
+  .footer .fa.fa-male {
+    float: left;
+    margin: 23px 5px 0 30px;
+    font-size: 2rem; }
+  .footer .unemployed {
+    float: left;
+    margin: 25px 0 0 20px;
+    font-size: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #FCDD61;
+    text-shadow: 3px 3px 3px black; }
+
+.buy {
+  width: 100%;
+  height: 60px;
+  background-color: #795D38;
+  border-radius: 10px;
+  box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75);
+  z-index: 50;
+  position: relative; }
+  .buy h5 {
+    height: 60px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    text-align: center;
+    color: #FCDD61;
+    font-size: 3rem;
+    text-shadow: 3px 3px 3px black; }
+  .buy h5:hover {
+    color: #808080; }
+  .buy .buy:hover {
+    background-color: #FCDD61; }
+
+.leftbox {
+  position: fixed;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px; }
+  .leftbox h1 {
+    color: #795D38;
+    text-shadow: 3px 3px 3px #FCDD61;
+    font-family: 'Orbitron', sans-serif; }
+  .leftbox h2 {
+    color: #795D38;
+    text-shadow: 3px 3px 3px #FCDD61;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px; }
+  .leftbox h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px #FCDD61;
+    color: #795D38;
+    margin-top: 0; }
+
+.apartment {
+  width: 900px;
+  height: 184px;
+  background-color: #457746;
+  background-repeat: no-repeat;
+  background-image: url(""); }
+  .apartment .apimage {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+  .apartment .apartmenthead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
+  .apartment .floortitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .apartment .fa.fa-building {
+    margin: 2px 5px 0 5px;
+    float: left; }
+
+.business {
+  width: 900px;
+  height: 180px;
+  background-color: #565587; }
+  .business .businesshead {
+    width: 900px;
+    height: 20px;
+    background-color: #636194; }
+  .business .floortitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .business .fa.fa-briefcase {
+    margin: 2px 5px 0 5px;
+    float: left; }
+  .business .imageb {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+
+.pizza {
+  width: 900px;
+  height: 180px; }
+  .pizza .imagep {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+  .pizza .pizzahead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
+  .pizza .pizzatitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .pizza .fa.fa-cutlery {
+    margin: 0 5px 0 5px;
+    float: left; }
+  .pizza .imagep {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+
+.mediumapartment {
+  width: 900px;
+  height: 180px;
+  background-color: #457746;
+  background-repeat: no-repeat;
+  background-image: url(""); }
+  .mediumapartment .mediumapartmenthead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
+  .mediumapartment .mediumapartmenttitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .mediumapartment .fa.fa-building {
+    margin: 2px 5px 0 5px;
+    float: left; }
+  .mediumapartment .imagemediumapartment {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+
+.burger {
+  width: 900px;
+  height: 180px; }
+  .burger .burgerhead {
+    width: 900px;
+    height: 22px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
+  .burger .burgertitle {
+    margin: 3px 700px 0 0;
+    float: right;
+    color: white; }
+  .burger .fa.fa-briefcase {
+    margin: 5px 5px 0 5px;
+    float: left; }
+  .burger .imageburger {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+  .burger .burgerbutton {
+    float: left;
+    margin: -10px 0 0 20px; }
+
+.largeapartment {
+  width: 900px;
+  height: 180px; }
+  .largeapartment .largeapartmenthead {
+    width: 900px;
+    height: 22px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
+  .largeapartment .largeapartmenttitle {
+    margin: 5px 700px 0 0;
+    float: right;
+    color: white; }
+  .largeapartment .fa.fa-building {
+    margin: 5px 5px 0 5px;
+    float: left; }
+  .largeapartment .imagelargeapartment {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+
+.wholebuttondiv {
+  width: 900px;
+  height: 180px;
+  background-image: url("../assets/images/Empty.png");
+  background-size: cover;
+  image-rendering: pixelated; }
+  .wholebuttondiv .leftb {
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    float: left;
+    border-radius: 20px;
+    margin: 68px 0 0 175px;
+    background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
+    color: red;
+    font-size: 20px;
+    font-family: cursive;
+    outline: none; }
+  .wholebuttondiv .rightb {
+    width: 100px;
+    height: 50px;
+    float: right;
+    border-radius: 20px;
+    margin: 55px 160px 0 0;
+    background-image: url("http://www.clker.com/cliparts/9/d/6/a/12305715971004425370rg1024_Set_of_soft_clouds_4.svg.thumb.png");
+    color: red;
+    font-size: 20px;
+    font-family: cursive;
+    outline: none; }
+  .wholebuttondiv select {
+    margin: 70px 0 0 180px; }
+  .wholebuttondiv .imageempty {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }
+
+.iron-tower {
+  position: absolute;
+  right: 0;
+  font-size: 65px;
+  margin-right: 300px;
+  color: #FCDD61;
+  font-family: 'Gear Crank', arial;
+  text-shadow: 5px 5px 5px black;
+  margin-bottom: 12px; }
+
+span {
+  color: #FE9230;
+  font-family: 'Gear Crank', arial;
+  text-shadow: 5px 5px 5px black; }
+
+.mediumapartment {
+  width: 900px;
+  height: 180px;
+  background-color: #457746;
+  background-repeat: no-repeat;
+  background-image: url(""); }
+  .mediumapartment .mediumapartmenthead {
+    width: 900px;
+    height: 20px;
+    background-color: #59895A;
+    box-shadow: 0px 0px 100px 14px rgba(0, 0, 0, 0.75); }
+  .mediumapartment .mediumapartmenttitle {
+    margin: 2px 700px 0 0;
+    float: right;
+    color: white; }
+  .mediumapartment .fa.fa-building {
+    margin: 2px 0 0 5px;
+    float: left; }
+  .mediumapartment .imagemediumapartment {
+    width: 900px;
+    height: 160px;
+    image-rendering: pixelated; }

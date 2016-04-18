@@ -146,10 +146,6 @@
       <DependentUpon>201604171649182_EmployeeAndFloor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\IronTowerDBContext.cs" />
-    <Compile Include="Models\Floor.cs" />
-    <Compile Include="Models\Game.cs" />
-    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Games\" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +205,16 @@
     <EmbeddedResource Include="Migrations\201604171649182_EmployeeAndFloor.resx">
       <DependentUpon>201604171649182_EmployeeAndFloor.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IronTower.Business\IronTower.Business.csproj">
+      <Project>{858F5552-8488-4820-855C-E97721444218}</Project>
+      <Name>IronTower.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IronTower.Data2\IronTower.Data2.csproj">
+      <Project>{68E8AA4C-BB32-495E-9D5C-2291CF5EB111}</Project>
+      <Name>IronTower.Data2</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

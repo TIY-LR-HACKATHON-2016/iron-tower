@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.EnterpriseServices.Internal;
 
-namespace IronTower.Web.Models
+namespace IronTower.Data2
 {
 
     public enum FloorCategory
