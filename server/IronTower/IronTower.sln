@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronTower.Data2", "IronTowe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronTower.Business", "IronTower.Business\IronTower.Business.csproj", "{858F5552-8488-4820-855C-E97721444218}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronTower.Console", "IronTower.Console\IronTower.Console.csproj", "{BA1C264B-8E7F-4802-AB29-B9A9892DA54D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{858F5552-8488-4820-855C-E97721444218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858F5552-8488-4820-855C-E97721444218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858F5552-8488-4820-855C-E97721444218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1C264B-8E7F-4802-AB29-B9A9892DA54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1C264B-8E7F-4802-AB29-B9A9892DA54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1C264B-8E7F-4802-AB29-B9A9892DA54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1C264B-8E7F-4802-AB29-B9A9892DA54D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
